@@ -1,0 +1,651 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+.jumbotron {
+padding: 4rem 2rem;
+}
+.display-3 {
+text-align: center;
+}
+.row {
+text-align: center;
+font-size : 18px;
+}
+#ProfileImg1 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#ProfileImg1:hover {opacity: 0.7;}
+#ProfileImg2 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#ProfileImg2:hover {opacity: 0.7;}
+#ProfileImg3 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#ProfileImg3:hover {opacity: 0.7;}
+#ProfileImg4 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#ProfileImg4:hover {opacity: 0.7;}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+#PicModal .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+#PicModal .close:hover,
+#PicModal .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+		}
+		}
+.googleCalendar{
+  position: relative;
+  height: 0;
+  width: 100%;
+}
+
+.googleCalendar iframe{
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 500px;
+  float: right;
+}
+@media (max-width: 500px) {
+#CalDisplay {
+display: none;
+}
+}
+#CalRedirect {
+display: none;
+}
+@media (max-width: 500px) {
+#CalRedirect {
+display: block;
+}
+}
+#formsubmit{
+float: left;
+}
+#formclear{
+float: right;
+}
+#formAfter {
+display: none;
+}
+#CalColourCodes {
+text-align: left;
+}
+#calcolourcodes {
+text-align: left;
+}
+#calreminder {
+text-align: left;
+}
+#CalReminder {
+text-align: left;
+font-size: 20px;
+}
+#displayRequestNumber {
+color : red;
+font-weight: bold;
+}
+#formFlag {
+color:red; 
+font-weight: bold;
+}
+#CheckRequestFlag {
+margin-bottom : 0px;
+font-size: 16px;
+}
+.SkillsetDisplay {
+text-align : left;
+}
+#hyperlink {
+font-weight : bold;
+}
+#requestBlocked {
+display : none;
+}
+#formBlocked {
+display : none;
+}
+</style>
+<title>Tutor Signup-Useful Links</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+function storeData() {
+	    var ConsultationArray;
+		if (localStorage["TutorConsultation"]){
+			ConsultationArray = JSON.parse(localStorage["TutorConsultation"]);
+		}
+		else {
+			ConsultationArray = [
+{"RequestNumber":"513341","Name":"Jordan","Email":"jordan@gmail.com","Phone":"26990789","Tutorchoice":"Jonathan Tan","apptdate":"2017-08-11","appttime":"16:40","apptduration":"1 hour","Concern":"This is an example of a Pending Request.","RequestStatus":"Pending"},
+{"RequestNumber":"685868","Name":"Gordon","Email":"gordon273@outlook.com","Phone":"87420229","Tutorchoice":"Jonathan Tan","apptdate":"2017-08-07","appttime":"12:40","apptduration":"1 hour","Concern":"This is an example of an Accepted Request.","RequestStatus":"Accepted"},
+{"RequestNumber":"618112","Name":"Davin","Email":"davin394@yahoo.com","Phone":"64757652","Tutorchoice":"Jonathan Tan","apptdate":"2017-08-05","appttime":"20:40","apptduration":"1 hour","Concern":"This is an example of a Rejected Request.","RequestStatus":"Rejected"},
+{"RequestNumber":"893384","Name":"Claire","Email":"april_claire@outlook.sg","Phone":"35942972","Tutorchoice":"Marrianne Clarke","apptdate":"2017-08-12","appttime":"15:30","apptduration":"1 hour","Concern":"This is an example of a Pending Request.","RequestStatus":"Pending"},
+{"RequestNumber":"641310","Name":"Karen","Email":"sweet_karen@gmail.com","Phone":"35245734","Tutorchoice":"Marrianne Clarke","apptdate":"2017-08-11","appttime":"11:30","apptduration":"1 hour","Concern":"This is an example of an Accepted Request.","RequestStatus":"Accepted"},
+{"RequestNumber":"558958","Name":"Jolene","Email":"29Jolene@yahoo.com","Phone":"77850762","Tutorchoice":"Marrianne Clarke","apptdate":"2017-08-10","appttime":"19:30","apptduration":"1 hour","Concern":"This is an example of a Rejected Request.","RequestStatus":"Rejected"},
+{"RequestNumber":"248686","Name":"Darren","Email":"darren-doy@hotmail.com","Phone":"65596939","Tutorchoice":"Sarah Sidle","apptdate":"2017-08-13","appttime":"14:20","apptduration":"1 hour","Concern":"This is an example of a Pending Request.","RequestStatus":"Pending"},
+{"RequestNumber":"349941","Name":"Rayan","Email":"rayan@google.com","Phone":"15244736","Tutorchoice":"Sarah Sidle","apptdate":"2017-08-08","appttime":"10:20","apptduration":"1 hour","Concern":"This is an example of an Accepted Request.","RequestStatus":"Accepted"},
+{"RequestNumber":"520113","Name":"Randy","Email":"randomRandy@yahoo.com","Phone":"17211381","Tutorchoice":"Sarah Sidle","apptdate":"2017-08-07","appttime":"18:20","apptduration":"1 hour","Concern":"This is an example of a Rejected Request.","RequestStatus":"Rejected"},
+{"RequestNumber":"666946","Name":"Terence","Email":"terence@live.com","Phone":"27436300","Tutorchoice":"Keith Cheng","apptdate":"2017-08-14","appttime":"13:10","apptduration":"1 hour","Concern":"This is an example of a Pending Request.","RequestStatus":"Pending"},
+{"RequestNumber":"585385","Name":"Mark","Email":"Mark_Sim@mail.com","Phone":"12345678","Tutorchoice":"Keith Cheng","apptdate":"2017-08-10","appttime":"09:10","apptduration":"1 hour","Concern":"This is an example of an Accepted Request.","RequestStatus":"Accepted"},
+{"RequestNumber":"251114","Name":"Eugene","Email":"Eugene23@example.com","Phone":"64655446","Tutorchoice":"Keith Cheng","apptdate":"2017-08-08","appttime":"17:10","apptduration":"1 hour","Concern":"This is an example of a Rejected Request.","RequestStatus":"Rejected"}
+];
+		}
+	var BlockedArray;
+		if (localStorage["BlockedSpam"]){
+			BlockedArray = JSON.parse(localStorage["BlockedSpam"]);
+		}
+		else {
+			BlockedArray = [
+{"Name":"Somebody","Email":"somebody@example.com","Phone":"12345678"},
+{"Name":"Somebody","Email":"example@somebody.com","Phone":"81726354"},
+{"Name":"Meh","Email":"meh@somebody.com","Phone":"87654321"},
+{"Name":"Blah","Email":"blah@blah.com","Phone":"18273645"},
+{"Name":"somebody","Email":"somebody@example.com","Phone":"12345678"},
+{"Name":"somebody","Email":"example@somebody.com","Phone":"81726354"},
+{"Name":"meh","Email":"meh@somebody.com","Phone":"87654321"},
+{"Name":"blah","Email":"blah@blah.com","Phone":"18273645"}
+];
+		}
+		var obj={};
+		$("#RequestForm :input").prop("disabled", true);
+		$("#RequestForm :input").attr("readonly","true");
+		var Username = document.getElementById("userName").value;
+		var Useremail = document.getElementById("userEmail").value;
+		var Userphone = document.getElementById("userPhone").value;
+		var TutorChoiceSelect = document.getElementById("TutorChoice");
+		var Tutorchoice = TutorChoiceSelect.options[TutorChoiceSelect.selectedIndex].text;
+		var appdate = document.getElementById("ApptDate").value;
+		var appttime = document.getElementById("ApptTime").value;
+		var ConsultationDurationSelect = document.getElementById("ApptDuration");
+		var apptduration = ConsultationDurationSelect.options[ConsultationDurationSelect.selectedIndex].text;
+		var Userconcern = document.getElementById("userConcern").value;
+		for (i = 0; i < BlockedArray.length; i++) {
+		var tempt = BlockedArray[i]
+		if (Username == tempt["Name"] || Useremail == tempt["Email"] || Userphone == tempt["Phone"]) {
+		sessionStorage.setItem("RequestBlocked",1);
+		break;
+		}
+		else {
+		sessionStorage.setItem("RequestBlocked",0);
+		}
+		}
+		if (sessionStorage.getItem("RequestBlocked") == 1) {
+		var requestblocked = document.getElementById("requestBlocked");
+		sessionStorage.setItem("FormBlocked",1);
+		requestblocked.style.display = "block";
+		}
+		else {
+		var RNgenerator = new IDGenerator();
+		var RequestNumber = RNgenerator.generate();
+		obj["RequestNumber"] = RequestNumber;
+	    obj["Name"] = Username;
+		obj["Email"] = Useremail;
+		obj["Phone"] = Userphone;
+		obj["Tutorchoice"] = Tutorchoice;
+		obj["apptdate"] = appdate;
+		obj["appttime"] = appttime;
+		obj["apptduration"] = apptduration;
+		obj["Concern"] = Userconcern;
+		obj["RequestStatus"] = "Pending";
+		ConsultationArray.push(obj);
+		 ConsultationArray.sort(function(a,b){
+            a = new Date(a.apptdate+' '+a.appttime);
+            b = new Date(b.apptdate+' '+b.appttime);
+            return a<b?-1:a>b?1:0;
+       });
+		localStorage["TutorConsultation"]=JSON.stringify(ConsultationArray);
+		localStorage["BlockedSpam"]=JSON.stringify(BlockedArray);
+		document.getElementById("displayRequestNumber").innerText = RequestNumber;
+		var formAfter = document.getElementById("formAfter");
+		formAfter.style.display = "block";
+	}
+	}
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+		<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+	    <li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+			<li><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+            <li><a href="Useful Links Guide Page.html">Guides</a></li>
+			<li class="active"><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+            <li><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div id="CheckRequestFlag" class="alert alert-info alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    Looking to check your consultation request status? Click <a id="hyperlink" href="Useful Links Tutee Dashboard Page.html">here</a>!
+  </div>
+<div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Need a tutor?</h1>
+        <p>You can see which tutors are available, their profile, skillset and book them! Start by scrolling down! </p>
+      </div>
+    </div>
+<div class="container-fluid">
+<div class="row">
+        <div class="col-md-12">
+          <h1>Our Tutors</h1>
+        </div>
+      </div>
+	  <div class="row">
+        <div class="col-md-3">
+		<img id="ProfileImg1" class="img-circle" src="../Media/jonathantan.png" alt="Jonathan's Picture" width="120px" height="120px"></img>
+          <h2>Jonathan Tan</h2>
+		  <h3>My Bio:</h3>
+          <p>
+		  From young, I always wanted help people. Now, I'm helping people who can't keep up with the progress of technology, especially the 
+		  elderly as they see it as no use. By making technology relevant into their daily lives, anything is possible!
+		  </p>
+		  <h3>My Skillset:</h3>
+		  <ul class="SkillsetDisplay">
+		  <li>Using Andorid Phones </li>
+		  <li>Basic Windows 7, 8.1 and 10 Operations </li>
+		  <li>Social Networking: Facebook, Twitter, Instagram</li>
+		  <li>Using Emails, Calendars and Contacts Online</li>
+		  <li>Using Microsoft Office</li>
+		  <li>Using Google Forms, Sheets and Docs</li>
+		  <li>Internet Security</li>
+		  <li>Resources on the Internet</li>
+		  <li>Internet of Things</li>
+		  </ul>
+        </div>
+        <div class="col-md-3">
+		<img id="ProfileImg2" class="img-circle" src="../Media/marrianneclarke.jpg" alt="Marrianne's Picture" width="120px" height="120px"></img>
+          <h2>Marrianne Clarke</h2>
+		  <h3>My Bio:</h3>
+          <p>
+		  I have a first hand experience when my mother was resistant to technology, saying that she could never master it.		  
+		  The complexity of technology is essentially creating a "barrier" between the technology-savvy and the non-technology-savvy elderly.
+		  By reducing the complexity to master Today's Technology, i believe it will be natural for the elderly to learn and pick up on Technology.
+		  </p>
+		  <h3>My Skillset:</h3>
+		  <ul class="SkillsetDisplay">
+		  <li>Using iPhones, iPads and iPods </li>
+		  <li>Basic Apple Mac OS/OSX Operations </li>
+		  <li>Using the Internet</li>
+		  <li>Using Emails, Calendars and Contacts Online </li>
+		  </ul>
+       </div>
+	    <div class="col-md-3">
+		<img id="ProfileImg3" class="img-circle" src="../Media/sarahsidle.jpg" alt="Sarah's Picture" width="120px" height="120px"></img>
+          <h2>Sarah Sidle</h2>
+		  <h3>My Bio:</h3>
+          <p>
+		  Today's generation of Technology-Savvy people have the basic skills of technology, but yet their predecessors don't.
+		  The problem is that training the elderly on tehnology is to have patience. To most to us, it seems common sense to 
+		  how technology works, but to the elderly they need to understand. With Step-by-step guidance, I believe, they 
+		  can be on-par on today's technology trends.
+		  </p>
+		  <h3>My Skillset:</h3>
+		  <ul class="SkillsetDisplay">
+		  <li>Basics of Information Technology</li>
+		  <li>Using Microsoft Office</li>
+		  <li>Using Google Forms, Sheets and Docs</li>
+		  <li>Basics of a Computer</li>
+		  <li>Basics of a phone</li>
+		  <li>Internet of Things</li>
+		  </ul>
+       </div>
+	    <div class="col-md-3">
+		<img id="ProfileImg4" class="img-circle" src="../Media/keithcheng.jpg" alt="Keith's Picture" width="120px" height="120px"></img>
+          <h2>Keith Cheng</h2>
+		  <h3>My Bio:</h3>
+          <p>
+		  Back in the old days, to commuicate means sitting down in a resturant or park and have a face-to-face conversation.
+		  But now, to commuicate means having a phone or computer to go on a Social Network and chat or Video call the other person.
+		  Of course, you could still have a sit-down conversation but the frequency of this is decreasing.
+		  By introducing the means of online commuication to the elderly, i believe they won't be lonely anytime soon!
+		  </p>
+		  <h3>My Skillset:</h3>
+		  <ul class="SkillsetDisplay">
+		  <li>Social Networking: Facebook, Twitter, Instagram</li>
+		  <li>Social Networking: LinkedIn, Facebook for Business, Google for Business</li>
+		  <li>Using Emails, Calendars and Contacts Online</li>
+		  <li>Using Microsoft Office</li>
+		  <li>Using Google Forms, Sheets and Docs</li>
+		  </ul>
+       </div>
+      </div>
+</div>
+<div id="PicModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="Modalimg"></img>
+  <div id="caption"></div>
+</div>
+<hr>
+<div class="container-fluid">
+<div class="row">
+        <div class="col-md-12">
+          <h1>Tutor Calendar</h1>
+        </div>
+      </div>
+	   <div id = "CalDisplay" class="row">
+	   <div class="col-md-5">
+		  <h3 id="calcolourcodes">Calendar Event Colour Codes</h3>
+		  <ul id="CalColourCodes">
+		  <li>Jonathan Tan - Blue Colour</li>
+		  <li>Marrianne Clarke - Yellow Colour</li>
+		  <li>Sarah Sidle - Green Colour</li>
+		  <li>Keith Cheng - Red Colour</li>
+		  <li>Public Hoildays - Pink Colour</li>
+		  </ul>
+		  <hr>
+		  <h3 id="calreminder">Reminder</h3>
+		  <p id="CalReminder">This Calendar serves as a guide for you to plan your appointment with the tutor, it <span style="font-weight: bold;">only shows consultations requests already approved by the Tutor</span> and <span style="font-weight: bold;">does not reflect consultation requests that are yet to be responded.</span> Subject to tutor availabilitly, your consultation <span style="font-weight: bold;">may/may not</span> be accepted. The tutor's decsion is <span style="font-weight: bold;">final</span> and we will not entertain any requests to appeal against rejection of your appointment by the tutor.</p>
+		 </div>
+		    <div class="col-md-7">
+			<div class="googleCalendar">
+	  <iframe 
+	  src="https://calendar.google.com/calendar/embed?showPrint=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=smartnationnyp%40gmail.com&amp;color=%231B887A&amp;src=en.singapore%23holiday%40group.v.calendar.google.com&amp;color=%23B1365F&amp;src=g2aemk6ibb8i5v1tcgqnuarih4%40group.calendar.google.com&amp;color=%23182C57&amp;src=me052k5a9rr60rqqf9sr5pbs2c%40group.calendar.google.com&amp;color=%23711616&amp;src=fvomeuh4gvh1bbr1k68anhke44%40group.calendar.google.com&amp;color=%23AB8B00&amp;src=fpkga5i3a88h9vmmn0g58c72bc%40group.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FSingapore" 
+	  style="border-width:0" width="750" height="500" frameborder="0" scrolling="no">
+	  </iframe>
+	  </div>
+	  </div>
+	  </div>
+	  <div id="CalRedirect" class="row">
+	   <div class="col-md-12">
+          <h3>Apologies,but the tutor calendar (Hosted on Google Calendar) is not optimsed for viewing based on your current resolution.Please view this page on a computer to see the Calendar. We regret for any inconvience caused.</h3>
+		 </div>
+	  </div>
+	  </div>
+	  <hr>
+<div class="container">
+<div class="row">
+        <div class="col-md-12">
+          <h1>Request for a Tutor</h1>
+        </div>
+<div class="row">
+        <div class="col-md-12">
+		<p><i class="material-icons" style="font-size: 35px;">access_time</i> This form should take about 5 minutes to complete...</p>
+          <p id="formFlag">All fields are required unless stated to submit request!</p>
+        </div>
+      </div>
+      </div>
+	  <div  id="formAfter" class="alert alert-success">
+  Request Submitted Sucessfully! Your unique 6 digit request number is #<span id="displayRequestNumber"></span>. You will receieve an response
+  regarding your request in 3 days, or you can always check your request status anytime <a class="alert-link" href="Useful Links Tutee Dashboard Page.html">here</a>!
+</div>
+<div  id="requestBlocked" class="alert alert-warning">
+    Your request was blocked due to receiving many spam requests using your information. If you think this is an error, please contact us using the Feedback Form on the <a class="alert-link" href="About Us Page.html">About Us Page</a>.
+  </div>
+  <div  id="formBlocked" class="alert alert-danger">
+    This form is disabled due to receiving many spam requests using your information. If you think this is an error, please contact us using the Feedback Form on the <a class="alert-link" href="About Us Page.html">About Us Page</a>.
+  </div>
+	  <form id="RequestForm" onsubmit="storeData();return false;" action="#">
+	  <fieldset>
+	  <legend>Let's Get to Know You!</legend>
+	  <div class="form-group">
+	  <label>Your Name:</label>
+	  <input type="text" class="form-control" id="userName" placeholder="John Doe" required></input>
+	  </div>
+	  <div class="form-group">
+	  <label>Your Email:</label>
+	  <input type="email" class="form-control" id="userEmail" placeholder="somebody@email.com" required></input>
+	  </div>
+	  <div class="form-group">
+	  <label>Your Phone Number:</label>
+	  <input type="text" class="form-control" id="userPhone" placeholder="12345678" pattern="^\d{8}$" required></input>
+	  </div>
+	  </fieldset>
+	  <fieldset>
+	  <legend>Let's set up your Consultation!</legend>
+	  <div class="form-group">
+	  <label>Select your tutor of your choice:</label>
+	  <select name="TutorChoice" id="TutorChoice" class="form-control" autocomplete="false" required>
+    <option value=""></option>
+	<option value="Jonathan Tan">Jonathan Tan</option>
+    <option value="Marrianne Clarke">Marrianne Clarke</option>
+    <option value="Sarah Sidle">Sarah Sidle</option>
+	<option value="Keith Cheng">Keith Cheng</option>
+  </select>
+	  </div>
+	  <div class="form-group">
+	  <label>Please choose a date of your choice for your consultation with your tutor (You can only choose a date 3 days later and book up to a week in advance) :</label>
+	  <input type="date" class="form-control" id="ApptDate" min="" max="" required></input>
+	  </div>
+	  <div class="form-group">
+	  <label>Please choose a time of your choice for your consultation with your tutor (You can only choose a time between 11am and 6pm) :</label>
+	  <input type="time" class="form-control" id="ApptTime" min="11:00" max="18:00" required></input>
+	  </div>
+	  <div class="form-group">
+	  <label>Select how long would you like your consultation to be:</label>
+	  <select name="ConsultationDuration" id="ApptDuration" class="form-control" autocomplete="false" required>
+    <option value="30 Minutes">30 Minutes</option>
+    <option value="1 hour" selected>1 hour</option>
+    <option value="1 hour and 30 minutes">1 hour and 30 minutes</option>
+	<option value="2 hours">2 hours</option>
+  </select>
+	  </div>
+	  <div class="form-group">
+	  <label>What are your concerns that you wish to pass to the tutor? (Not Required)</label>
+	  <textarea class="form-control" rows="7" id="userConcern" placeholder="I would like the tutor to touch on..." autocomplete="false"></textarea>
+	  </div>
+	  </fieldset>
+	  <button id="formsubmit" type="submit" class="btn btn-primary" value="submit">Submit Request</button>
+	  <button id="formclear" type="reset" class="btn btn-default" value="Reset">Clear Form</button>
+	  </form>
+	  </div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<br>
+	<br>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+	<script>
+	CheckFormBlock();
+	SetMinDate();
+	SetMaxDate();
+		function CheckFormBlock () {
+		var formblocked = document.getElementById("formBlocked");
+		if (sessionStorage.getItem("FormBlocked") == 1) {
+		$("#RequestForm :input").prop("disabled", true);
+		$("#RequestForm :input").attr("readonly","true");
+		formblocked.style.display = "block";
+		}
+		}
+		function SetMinDate () {
+var Today = new Date();
+var Day = Today.getDate() + 3;
+var Month = Today.getMonth()+1; //January is 0!
+var Year = Today.getFullYear();
+ if(Day<10){
+        Day='0'+Day
+    } 
+    if(Month<10){
+        Month='0'+Month
+    } 
+Today = Year+'-'+Month+'-'+Day;
+document.getElementById("ApptDate").setAttribute("min", Today);
+}
+	function SetMaxDate () {
+var Today = new Date();
+var Day = Today.getDate() + 10;
+var Month = Today.getMonth()+1; //January is 0!
+var Year = Today.getFullYear();
+ if(Day<10){
+        Day='0'+Day
+    } 
+    if(Month<10){
+        Month='0'+Month
+    } 
+Today = Year+'-'+Month+'-'+Day;
+document.getElementById("ApptDate").setAttribute("max", Today);
+}
+function IDGenerator() {
+	 
+		 this.length = 6;
+		 this.timestamp = +new Date;
+		 
+		 var _getRandomInt = function( min, max ) {
+			return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+		 }
+		 
+		 this.generate = function() {
+			 var ts = this.timestamp.toString();
+			 var parts = ts.split( "" ).reverse();
+			 var id = "";
+			 
+			 for( var i = 0; i < this.length; ++i ) {
+				var index = _getRandomInt( 0, parts.length - 1 );
+				id += parts[index];	 
+			 }
+			 
+			 return id;
+		 }
+
+		 
+	 }
+var modal = document.getElementById('PicModal');
+var img1 = document.getElementById('ProfileImg1');
+var img2 = document.getElementById('ProfileImg2');
+var img3 = document.getElementById('ProfileImg3');
+var img4 = document.getElementById('ProfileImg4');
+var modalImg = document.getElementById("Modalimg");
+var captionText = document.getElementById("caption");
+img1.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img2.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img3.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img4.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+var span = document.getElementsByClassName("close")[1];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+body .event-tab {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #3079b9;
+}
+body .event-tab:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+body .event-tab li {
+  float: left;
+}
+body .event-tab li a {
+  border: 1px solid #dddddd;
+  padding: 5px 20px;
+  display: block;
+}
+body .event-tab li.active a,
+body .event-tab li:hover a {
+  background-color: #3079b9;
+  border-color: #3079b9;
+  color: #ffffff;
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .container .jumbotron,
+  .container-fluid .jumbotron {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 50px;
+  }
+}
+  body .arrow {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid #ed1a3b;
+  color: #ed1a3b !important;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-left: 10px;
+  background: url('../Media/ic-chevron-red.png') center no-repeat;
+  vertical-align: middle;
+}
+body .arrow:hover,
+body .arrow:focus {
+  background: #ed1a3b url('../Media/ic-chevron-white.png') center no-repeat;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  }
+body .event-tab{
+margin-top: 20px;
+}
+</style>
+<title>Workshops</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+
+<script type="text/javascript">
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+		<li class="active"><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+	    <li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+            <li><a href="Useful Links Guide Page.html">Guides</a></li>
+			<li><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+            <li><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div class="container">
+	<ul class="event-tab">
+            <li id="currentEvents" class="active">
+                <a id="" href="#" onClick="activeButtonCurrent()">Current</a>
+            </li>
+            <li id="pastEvents">
+                <a id="" href="#" onClick="activeButtonPast()">Past</a>
+            </li>
+	</ul>
+</div>
+<div id="currentTab">
+	<div class="container" id="newWorkshops">
+
+	</div>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Samsung Smart Academy
+				<a id="" class="arrow" href="http://www.samsung.com/sg/smartacademy/" target="_blank"></a>
+			</h1>
+			<p><strong>07 Aug 2017 - 31 Dec 2017</strong></p>
+			<p>Have a Samsung S Series or A Series? Join the many workshops available to learn more about your phone.
+			</p>
+		</div>
+		<div class="jumbotron">
+			<h1>PA Seniors for Smart Nation
+				<a id="" class="arrow" href="https://www.pa.gov.sg/Our_Programmes/Lifeskills_and_Lifestyle/Seniors_for_Smart_Nation" target="_blank"></a>
+			</h1>
+			<p><strong>07 Aug 2017 - 31 Dec 2017</strong></p>
+			<p>The PA launched the ‘Seniors for Smart Nation’ programme with its key mission to prepare seniors to be smart nation ready, allowing a 
+			seamless integration into the community and enhancing their quality of life. Currently, 50 Community Clubs (CCs) island-wide have been 
+			identified to offer ‘Seniors for Smart Nation’ courses.</p>
+		</div>
+		<div class="jumbotron">
+			<h1>Today at Apple
+				<a id="" class="arrow" href="https://www.apple.com/sg/today/" target="_blank"></a>
+			</h1>
+			<p><strong>07 Aug 2017 - 31 Dec 2017</strong></p>
+			<p>Join workshops to learn how to use your iPhone more efficiently. Discover inspiring programs happening near you.</p>
+		</div>
+		<div class="jumbotron">
+			<h1>one-North Festival
+				<a id="" class="arrow" href="https://onenorthfestival.sg/about/" target="_blank"></a>
+			</h1>
+		  <p><strong>18 Aug 2017 - 19 Aug 2017</strong></p>
+		  <p>The one-north Festival is a celebration of research, innovation, creativity, and enterprise and is open to the 
+		  public on 18 and 19 August 2017. Held at Biopolis this year, the Festival is jointly organised by Agency for Science, 
+		  Technology and Research (A*STAR) and JTC and supported by Science Centre Singapore and Mediacorp; along with many 
+		  partners within and beyond one-north.</p>
+		</div>
+	</div>
+</div>
+<div id="pastTab">
+	<div class="container">
+		<div class="jumbotron">
+		  <h1>Silver IT Fest
+		  <a id="" class="arrow" href="https://www.imda.gov.sg/SilverITFest" target="_blank"></a>
+		  </h1>
+		  <p><strong>10 Jun 2016 - 11 Jun 2017</strong></p>
+		  <p>Seniors can go digital too! Join us for these two exciting events where seniors can pick up new IT skills, or level up to gain useful 
+		  technology tips and tricks!</p>
+		</div>
+		<div class="jumbotron">
+		  <h1>NYP Workshop
+		  <a id="" class="arrow" href="Workshops/Workshop 1.html" target="_blank"></a>
+		  </h1>
+		  <p><strong>10 May 2017</strong></p>
+		  <p>Join us at NYP where we will have student volunteers to help you to learn how to use the smart features
+		  in your smartphone.</p>
+		</div>
+		<div class="jumbotron">
+		  <h1>Silver IT Fest
+		  <a id="" class="arrow" href="https://www.imda.gov.sg/infocomm-and-media-news/events/2017/3/silver-it-fest---it-classes" target="_blank"></a>
+		  </h1>
+		  <p><strong>18 Mar 2017 - 20 Mar 2017</strong></p>
+		  <p>The Silver IT Fest IT classes offer seniors the opportunity to learn more IT skills and pick up new hobbies. Seniors can learn how to 
+		  use a basic computer, send e-mails, check on health information, social networking, e-travel and many more!
+		  <br>
+		  Conducted in the four official languages, the IT classes have been a hit among seniors since it was launched 10 years ago. 
+		  The classes are taught by seniors and volunteers from the Friends of Silver Infocomm (FSI), who will pace the class comfortably to suit 
+		  the seniors’ learning needs.</p>
+		</div>
+	</div>
+</div>
+</div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+	<script src="../server/server_Workshop.js"></script>
+	<script>
+	newWorkshops();
+	</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+h1{
+text-align:center;
+}
+textarea {
+    resize: none;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+#loginFailed,#loggedOut{
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.alert-dismissible .close {
+  position: relative;
+  top: 0px;
+  right: 0px;
+}
+</style>
+<title>Admin page</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+</script>
+</head>
+<body>
+
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+	  <div class="container-fluid">
+	  <h1>Welcome to the Smart Nation Workshops/Event Admin page</h1>
+	  <div id="loginFailed" class="alert alert-warning alert-dismissible fade in" role="alert">
+		 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		Wrong User ID or Password! Please try again.
+	  </div>
+	  <div id="loggedOut" class="alert alert-warning alert-dismissible fade in" role="alert">
+		 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		You have succesfully logged out.
+	  </div>
+      <form class="form-signin" id="userform" onsubmit="return false">
+        <h2 class="form-signin-heading">Please sign in</h2>
+		<div>
+			<input type="text" id="user" class="form-control" placeholder="Username" required="">
+        </div>
+		<label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="passphrase" class="form-control" placeholder="Password" required="">
+        <button type="submit" class="btn btn-lg btn-primary btn-block" onClick="encryption('userform')">Sign in</button>
+      </form>
+	  </div>
+		<div class="container-fluid" id="textBox">
+		<div class="col-lg-12">
+			<div class="form-group">
+			<form>
+			<label for="title">Title:</label>
+			<textarea class="form-control" rows="1" id="title" placeholder="Enter title here" required></textarea>
+			<br>
+			<label>Start date:</label>
+			<input type="date" class="form-control" id="startDate" min="" onchange="endDay()" required></input>
+			<br>
+			<label>End date:</label>
+			<input type="date" class="form-control" id="endDate" min="" required></input>
+			<br>
+			<label for="description">Description:</label>
+			<textarea class="form-control" rows="5" id="description" placeholder="Enter description here" required></textarea>
+			<br>
+			<label for="comment">URL Address:</label>
+			<textarea class="form-control" rows="1" id="url" placeholder="Enter URL here" required></textarea>
+			<br>
+			<div class="input-group">
+			<button type="submit" class="btn btn-primary" onClick="checkBlank()">Submit</button>
+			</div>
+			<br>
+			<div class="input-group">
+			<button type="" class="btn btn-danger" onClick="logOut()">Logout</button>
+			</div>
+			</form>
+			</div>
+		</div>
+		</div>
+
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="../JavaScript/bootstrap.min.js"></script>
+ <script src="../server/server_WorkshopAdmin.js"></script>
+ <script>
+	var Today = new Date();
+	var Day = Today.getDate();
+	var Month = Today.getMonth()+1; //January is 0!
+	var Year = Today.getFullYear();
+	 if(Day<10){
+			Day='0'+Day
+		} 
+		if(Month<10){
+			Month='0'+Month
+		} 
+
+	Today = Year+'-'+Month+'-'+Day;
+	document.getElementById("startDate").setAttribute("min", Today);
+	hiddenStuff();
+ </script>
+</body>
+</html>

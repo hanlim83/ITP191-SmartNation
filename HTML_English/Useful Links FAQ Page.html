@@ -1,0 +1,249 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+.faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+	
+	#TutorAlert {
+font-size : 16px;
+	}
+</style>
+<title>Frequently Asked Questions-Useful Links</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+function saveToStorage(){
+var FAQ;
+
+var inputQns=document.getElementById("qns").value;
+
+var FAQqns={};
+FAQqns["qns"]=inputQns;
+
+if (localStorage["FAQ"]) {
+FAQ=JSON.parse(localStorage["FAQ"]);
+}
+else{
+FAQ=[];
+}
+
+FAQ.push(FAQqns);
+
+localStorage["FAQ"]=JSON.stringify(FAQ);
+
+return false;
+}
+
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+		<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+	    <li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li class="active"><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+            <li><a href="Useful Links Guide Page.html">Guides</a></li>
+			<li><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+            <li><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div id="TutorAlert" class="alert alert-info alert-dismissable fade in">
+<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+Prefer having a tutor to answer your questions? Click <a href="Useful Links Tutor Form Page.html" class="alert-link">here</a> to get a tutor!
+</div>
+<div class="container">
+<form onsubmit="saveToStorage()">
+    <br>
+    <div class="panel-group" id="accordion">
+        <div class="faqHeader">General questions regarding Smart Nation</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What is Smart Nation?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  Smart Nation is a national effort to co-create a future of better living for all through tech-enabled solutions. It aims to rally the collective efforts of people, businesses and goverment to work together to support better living, create more opportunities, and support stronger communities by harnessing info-comm technologies, network and big data. In simpler terms, Smart Nation aims to improve lives through technological advancements.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Why Smart Nation?</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse">
+                <div class="panel-body">
+               Smart Nation opens up new possibilties to enhance the way people work, live and play. Smart Nation also support better living, stronger communities and create more opportunities for all.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">What can i look forward to?</a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse">
+                <div class="panel-body">
+                 Smart Nation aims to make a impact in 5 key domains.
+				 <ol>
+				 <li>Transport</li>
+				 <li>Home & Environment</li>
+				 <li>Business productivity</li>
+				 <li>Health & enabled ageing</li>
+				 <li>Public sector services</li>
+				 </ol>
+                </div>
+            </div>
+        </div>
+		 <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">Does Smart Nation equates to lesser job opportunities?</a>
+                </h4>
+            </div>
+            <div id="collapseTwelve" class="panel-collapse collapse">
+                <div class="panel-body">
+                 To a certain extent,yes. However, while some jobs disappear, there are new jobs and platforms that will emerge. As long as one possess the neccessary skills and tools,this would not be a concern.
+                </div>
+            </div>
+        </div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+				<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">Should we be worried about hackers as Smart Nation rises?</a>
+				</h4>
+				</div>
+			<div id="collapseThirteen" class="panel-collapse collapse">
+				<div class="panel-body">
+				According to a recent UN study, Singapore has been ranked first among other countries. This means that the goverment will be stepping up their efforts to minimise the risk of hackers intruding. However, one should also be vigilant and take measures to prevent hackers from having opportunities for intrusion.
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+				<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen">Does Smart Nation result in a loss of culture?</a>
+				</h4>
+				</div>
+			<div id="collapseFourteen" class="panel-collapse collapse">
+			<div class="panel-body">
+			No, the culture can still be preserved. In fact, Smart Nation can help people to understand more about the culture.
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+				<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen">Will the older generation be left behind as Smart Nation progresses?</a>
+				</h4>
+				</div>
+			<div id="collapseFifteen" class="panel-collapse collapse">
+			<div class="panel-body">
+			This should not be a concern as governemnt will be stepping up their efforts to help elderly become more tech-savvy. After all, Smart Nation strives to improve the living for all.
+			</div>
+		</div>
+	</div>
+		
+		
+
+	<h1>Questions that we missed? Drop it down below</h1>
+		<div class="form-group">
+      <label for="qns" class="form-control-label">Questions(if any)</label>
+      <textarea id="qns" class="form-control" rows="3"></textarea>
+    </div>
+	 <button  class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+</div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<br>
+	<br>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+hr {
+border:1px solid black;
+}
+#after_submit {
+visibility:hidden;
+background:white;
+padding:10px 20px 10px 20px;
+width: 650px;
+border-radius:20px;
+float:left;
+margin-left:20px;
+font-size:30px;
+border: 2px solid black;
+}
+
+#quiz {
+margin-left:10px;
+background:white;
+padding: 10px 20px 10px 20px;
+width:400px;
+border-radius:20px;
+float:left;
+border: 2px solid black;
+}
+
+#TutorAlert {
+font-size : 16px;
+}
+
+</style>
+<title>Guides-Useful Links</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+function check() {
+confirm("Are you sure you want to submit?");
+var qns1=document.quiz.qns1.value;
+var qns2=document.quiz.qns2.value;
+var qns3=document.quiz.qns3.value;
+var qns4=document.quiz.qns4.value;
+var qns5=document.quiz.qns5.value;
+var qns6=document.quiz.qns6.value;
+var correct=0;
+
+if (qns1=="Settings") {
+correct++;
+}
+if (qns2=="Play Store") {
+correct++;
+}
+if (qns3=="Settings") {
+correct++;
+}
+if(qns4=="Play store") {
+correct++;
+}
+if(qns5=="All of the above") {
+correct++;
+}
+if(qns6=="Hold") {
+correct++;
+}
+
+
+var messages=["Good job!","Thats just okay", "You can do better"];
+var picture=["../Media/naise.gif","../Media/meh.gif","../Media/fail.gif"];
+
+var range;
+
+if(correct<2) {
+range=2;
+}
+if(correct>0 && correct<6) {
+range=1;
+}
+if(correct>4) {
+range=0;
+}
+
+
+document.getElementById("after_submit").style.visibility="visible";
+
+document.getElementById("message").innerHTML=messages[range];
+document.getElementById("number_correct").innerHTML= "You got " +correct + " correct." ;
+document.getElementById("picture").src=picture[range];
+}
+
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+		<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+	    <li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+            <li class="active"><a href="Useful Links Guide Page.html">Guides</a></li>
+			<li><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+            <li><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div id="TutorAlert" class="alert alert-info alert-dismissable fade in">
+<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+Prefer having a tutor to guide you? Click <a href="Useful Links Tutor Form Page.html" class="alert-link">here</a> to get a tutor!
+</div>
+<h1 align="center">Looking for a step-by-step guide? Look no further!</h1>
+<section id="services" class="container">
+
+<h3>Guide for Andriod user:</h3>
+<a href="PDF guide/WADP guide.pdf" target="blank">PDF guide(For andriod users)-English</a><br>
+<a href="PDF guide/WADP guide.pdf" targer="blank">PDF guide(For andriod users)-Chinese</a>
+
+<br>
+
+<h3>Guide for iOS user:</h3>
+<a href="PDF guide/WADP guide-IOS.pdf" target="blank">PDF guide(For iOS users)-English</a><br>
+<a href="PDF guide/WADp guide-IOS.pdf" target="blank">PDF guide(For iOS users)-Chinese</a>
+
+<br>
+
+<h3>Communicate seamlessly with Whatsapp:</h3>
+<a href="PDF guide/Whatsapp guide.pdf" target="blank">Starter guide for Whatsapp-English</a><br>
+<a href="PDF guide/Whatsapp-Chinese.pdf" target="blank">Starter guide for Whatsapp-Chinese</a>
+
+<br>
+
+<h3>Pay faster with Samsung Pay:</h3>
+<a href="PDF guide/Samsung pay guide.pdf" target="blank">How to start paying with Samsung Pay-English</a><br>
+<a href="PDF guide/Samsung pay guide.pdf" target="blank">How to start paying with Samsung Pay-Chinese</a>
+<hr>
+
+
+<h3>Take a quiz to test your understanding</h3>
+
+
+<form id="quiz" name="quiz" onsubmit="return false">
+<p>Where can i connect to the wifi?</p>
+<input type="radio" id="qns1" name="qns1" value="Play Store">Play Store<br>
+<input type="radio" id="qns1" name="qns1" value="Google Chrome">Google Chrome<br>
+<input type="radio" id="qns1" name="qns1" value="Settings">Settings<br>
+<input type="radio" id="qns1" name="qns1" value="None of the above">None of the above<br>
+<br>
+<p>Where can i install an app?</p>
+<input type="radio" id="qns2" name="qns2" value="Settings">Settings<br>
+<input type="radio" id="qns2" name="qns2" value="Play Store">Play Store<br>
+<input type="radio" id="qns2" name="qns2" value="Gallery">Gallery<br>
+<input type="radio" id="qns2" name="qns2" value="All of the above">All of the above<br>
+<br>
+<p>Where can i uninstall an app?</p>
+<input type="radio" id="qns3" name="qns3" value="Google Chrome">Google Chrome<br>
+<input type="radio" id="qns3" name="qns3" value="Gallery">Gallery<br>
+<input type="radio" id="qns3" name="qns3" value="Whatsapp">Whatsapp<br>
+<input type="radio" id="qns3" name="qns3" value="Settings">Settings<br>
+<br>
+<p>Where can i update an app?</p>
+<input type="radio" id="qns4" name="qns4" value="Gallery">Gallery<br>
+<input type="radio" id="qns4" name="qns4" value="Settings">Settings<br>
+<input type="radio" id="qns4" name="qns4" value="Play Store">Play Store<br>
+<input type="radio" id="qns4" name="qns4" value="Google Chrome">Google Chrome<br>
+<br>
+<p>Which of the option is something you can send via Whatsapp?</p>
+<input type="radio" id="qns5" name="qns5" value="Photos">Photos<br>
+<input type="radio" id="qns5" name="qns5" value="Location">Location<br>
+<input type="radio" id="qns5" name="qns5" value="Documents">Documents<br>
+<input type="radio" id="qns5" name="qns5" value="All of the above">All of the above<br>
+<br>
+<p>What of the option is <strong>not</strong> the steps of paying with Samsung Pay?</p>
+<input type="radio" id ="qns6" name="qns6" value="Swipe">Swipe<br>
+<input type="radio" id ="qns6" name="qns6" value="Hold">Hold<br>
+<input type="radio" id ="qns6" name="qns6" value="Tap">Tap<br>
+<input type="radio" id ="qns6" name="qns6" value="Authenicate">Authenicate<br>
+
+<input type="submit" id="submit" class="btn btn-info" value="Submit Quiz" onclick="check();">
+</form>
+
+
+
+<div id="after_submit">
+
+<p id="message"></p>
+<p id="number_correct"></p>
+<img id="picture">
+</div>
+</section>
+
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<br>
+	<br>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+</body>
+</html>

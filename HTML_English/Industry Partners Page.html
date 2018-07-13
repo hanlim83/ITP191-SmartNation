@@ -1,0 +1,431 @@
+	<!Doctype html>
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+	<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+
+
+
+
+	<style>
+	/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+
+	figure.Pcard {
+	  font-family: 'Raleway', Arial, sans-serif;
+	  position: relative;
+	  float: left;
+	  overflow: hidden;
+	  margin: 10px 1%;
+	  min-width: 28%;
+	  max-width: 30%;
+	  width: 100%;
+	  background: #000000;
+	  color: #333;
+	  text-align: left;
+	  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	  margin-bottom: 60px;
+	}
+	figure.Pcard * {
+	  -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+	  transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+	}
+	figure.Pcard img {
+	  max-width: 100%;
+	  vertical-align: top;
+	  max-height: 300px;
+	}
+	figure.Pcard figcaption {
+	  position: relative;
+	  background-color: #ffffff;
+	  padding: 20px 25px 50px;
+	}
+	figure.Pcard h3 {
+	  position: absolute;
+	  bottom: 100%;
+	  text-transform: uppercase;
+	  padding: 0px 25px;
+	  line-height: 44px;
+	  margin: 0;
+	  left: 0;
+	  font-weight: 400;
+	  background-color: #000000;
+	  color: #ffffff;
+	}
+	figure.Pcard h3 span {
+	  position: absolute;
+	  left: 100%;
+	  border-style: solid;
+	  border-width: 44px 0 0 12px;
+	  border-color: transparent transparent transparent #000000;
+	  content: '';
+	  top: 0;
+	}
+	figure.Pcard p {
+	  font-size: 1.2em;
+	  font-weight: 500;
+	  text-align: left;
+	  margin: 0;
+	  line-height: 1.6em;
+	}
+	figure.Pcard .price {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  color: #ffffff;
+	  background-color: #000000;
+	  padding: 0 10px;
+	  line-height: 40px;
+	  font-weight: 800;
+	}
+	figure.Pcard a {
+	  text-decoration: none;
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  background-color: #000000;
+	  line-height: 40px;
+	  padding: 0 10px;
+	  color: #ffffff;
+	  font-weight: 800;
+	  font-size: 0.9em;
+	  text-transform: uppercase;
+	}
+	figure.Pcard.blue {
+	  background-color: #2472a4;
+	}
+	figure.Pcard.blue h3,
+	figure.Pcard.blue a,
+	figure.Pcard.blue .price {
+	  background-color: #2472a4;
+	}
+
+	figure.Pcard.red {
+	  background-color: #ab3326;
+	}
+	figure.Pcard.red h3,
+	figure.Pcard.red a,
+	figure.Pcard.red .price {
+	  background-color: #ab3326;
+	}
+
+	figure.Pcard.orange {
+	  background-color: #d67118;
+	}
+	figure.Pcard.orange h3,
+	figure.Pcard.orange a,
+	figure.Pcard.orange .price {
+	  background-color: #d67118;
+	}
+
+
+
+	.modal-backdrop.in {
+		filter: alpha(opacity=7);
+		opacity: 0.7;
+	}
+	 
+	.modal-content {
+		background: none;
+		border: 0;
+		-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+		-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+	}
+	 
+	.modal-body {
+		padding: 0 25px 25px 25px;
+	}
+	 
+	.modal-header {
+		padding: 25px 25px 15px 25px;
+		text-align: right;
+	}
+	 
+	.modal-header, .modal-footer {
+		border: 0;
+	}
+	 
+	.modal-header .close {
+		float: none;
+		margin: 0;
+		font-size: 36px;
+		color: #fff;
+		font-weight: 300;
+		text-shadow: none;
+		opacity: 1;
+	}
+	 
+	a .video-link-icon {
+		position: relative;
+		margin-right: 10px;
+		background: #e89a3e;
+		color: #fff;
+		  text-decoration: none;
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  background-color: #000000;
+	  line-height: 40px;
+	  padding: 0 10px;
+	  color: #ffffff;
+	  font-weight: 800;
+	  font-size: 0.9em;
+	  text-transform: uppercase;
+	}
+	table {
+		border: 1px solid grey; 
+		width: 100%;
+		cellpadding: 10px;	
+		font-size: 1.2em;
+	}
+	tr{
+		background-color: #f2f2f2;
+		border: 1px solid grey;
+		padding: 2px;
+	}
+	</style>
+	<title>Smart Solutions</title>
+	<!--
+	<script type="text/javascript" src="*.js">
+	</script>
+	-->
+	<script type="text/javascript">
+
+	/*function cart()
+	{
+		var node = document.createElement("LI");
+		var price = document.getElementById("price");
+		var textnode = document.createTextNode(price);
+		node.appendChild(textnode);
+		document.getElementById("myList").appendChild(node);
+	}*/
+
+	function commenting() {
+	var CommentArray;
+	if (localStorage["SmartComment"]) {
+		CommentArray = JSON.parse(localStorage["SmartComment"]);
+	}
+	else 
+	{
+		CommentArray=[];
+	}
+		
+		var obj={};
+		var comments= document.getElementById("comment").value;
+		obj["comments"] = comments;
+		CommentArray.push(obj);
+		localStorage["SmartComment"] = JSON.stringify(CommentArray);
+		$("#satay tbody").append(
+			"<tr>"+
+			"<td>"+comments+"</td>"+
+			"</tr>"
+		);
+	}
+	function DisplayComments ()
+	{
+	if (localStorage["SmartComment"]) {
+		CommentArray = JSON.parse(localStorage["SmartComment"]);
+	
+	for (i = 0; i<CommentArray.length;i++) {
+	var iComment = CommentArray[i];
+	var comments = iComment["comments"];
+	$("#satay tbody").append(
+			"<tr>"+
+			"<td>"+comments+"</td>"+
+			"</tr>"
+		);
+	}
+	}
+	}
+	</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+			<li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+			<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+			<li class="active"><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+			<li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+				<li><a href="Useful Links Guide Page.html">Guides</a></li>
+				<li><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+				<li><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+				<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+
+	<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+
+		
+	<figure class="Pcard">
+	  <img src="../Media/shop1.png" alt="..."/>
+	  <div class="price" data-price="19.00">$238.00</div>
+	  <figcaption>
+		<h3>Smart Wallet</h3>
+		<p>
+			Volterman. Built-in Powerbank, Distance Alarm, Global GPS Tracking, Worldwide WiFi Hotspot, Anti-Thief Camera.
+		</p>
+		
+		<button data-toggle="collapse" data-target="#com" onclick="DisplayComments()">Comments</button>
+		<div class="collapse" id="com">
+			</br>
+			<table id="satay" >
+				<caption>Comments</caption>
+				<tbody>
+					<tr>
+						<td>Useful Product</td>
+					</tr>
+				</tbody>
+			</table>
+				</br>
+			<textarea rows="4" cols="40" name="comment" id="comment" form="usrform" placeholder="Any Comment?"></textarea>
+			<input type="submit" onclick="commenting();" value="Submit">
+		</div>
+		<a href="#" class="launch-modal" data-modal-id="modal-video">Learn more
+			<span class="video-link-icon"><i class="fa fa-play"></i></span>
+		</a>
+	  </figcaption>
+	</figure>
+
+<figure class="Pcard blue hover">                  
+	  <img src="../Media/shop4.png" alt="..."/>
+	  <div class="price">$398.00</div>
+	  <figcaption>
+		<h3>Apple Watch Series 2</h3>
+		<p>
+		  Built-in GPS. Water resistance to 50 metres.1 A lightning-fast dual core processor. And a display that’s two times brighter than before.
+		</p><a href="https://www.apple.com/sg/apple-watch-series-2/" target="_blank">learn more</a>
+		<button data-toggle="collapse" data-target="#com2" >Comments</button>
+		<div class="collapse" id="com2">
+			</br>
+			<table id="satay2" >
+				<caption>Comments</caption>
+				<tbody>
+					<tr>
+						<td>Useful Product</td>
+					</tr>
+				</tbody>
+			</table>	
+			</br>
+				<textarea rows="4" cols="40" name="comment" id="comment" form="usrform" placeholder="Any Comment?"></textarea>
+				<input type="submit" onclick="commenting();" value="Submit">
+		</div>
+	  </figcaption>
+	</figure>
+	
+	<figure class="Pcard orange">
+	  <img src="../Media/shop3.jpg" alt="..."/>
+	  <div class="price">$90.00</div>
+	  <figcaption>
+		<h3>Reliefband</h3>
+		<p>
+		  Using a technique called neuromodulation, the device produces soft pulses on the underside of the wrist. 
+		  That creates a mild tingling sensation that travels to your body's central nervous system. 
+		</p><a href="http://www.reliefband.com/" target="_blank">learn more</a>
+		<button data-toggle="collapse" data-target="#com3" >Comments</button>
+		<div class="collapse" id="com3">
+			</br>
+			<table id="satay3" >
+				<caption>Comments</caption>
+				<tbody>
+					<tr>
+						<td>Awesome</td>
+					</tr>
+				</tbody>
+			</table>	
+			</br>
+				<textarea rows="4" cols="40" name="comment" id="comment" form="usrform" placeholder="Any Comment?"></textarea>
+			<input type="submit" onclick="commenting();" value="Submit">
+			
+		</div>
+	  </figcaption>
+	</figure>
+	</figure>
+
+	<div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="modal-video-label">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="modal-video">
+								<div class="embed-responsive embed-responsive-16by9">
+									<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/WrslPHiz2mI" frameborder="0" 
+									allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+
+
+	<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+		<a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+		<br>
+		<br>
+		<footer class="footer">
+		  <div class="container">
+			<p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+			<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+		  </div>
+		</footer>
+
+				<script>
+				DisplayComments();
+					$('.launch-modal').on('click', function(e){
+					e.preventDefault();
+					$( '#' + $(this).data('modal-id') ).modal();
+					});
+				
+					$('.collapse').collapse();
+				</script>
+				
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="../JavaScript/bootstrap.min.js"></script>
+		<script src="../JavaScript/ScrollTop.js"></script>
+
+
+			<script src="../JavaScript/bootstrap.min.js"></script>
+			<script src="../JavaScript/jquery.backstretch.min.js"></script>
+			<script src="../JavaScript/scripts.js"></script>
+	</body>
+	</html>

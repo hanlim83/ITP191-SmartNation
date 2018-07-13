@@ -1,0 +1,261 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+#SNhomepic {
+position: relative;
+margin: auto;
+}
+nav ul li .btn{
+padding: 12px 24px;
+}
+.body p{
+font-size:17px;
+}
+h1{
+margin-top:0px;
+}
+#text1{
+margin: auto;
+text-align: center;
+align-items: center;
+}
+#option ul li{display:inline;
+display:inline-block;
+}
+#option ul{
+padding:0px;
+}
+#option ul li a{
+font-size:17px;
+}
+#usefulHeading{
+text-align:center;
+text-decoration: underline;
+}
+</style>
+<title>Home</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script src="../server/server_HomePage.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li  class="active"><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+		<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+	    <li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+            <li><a href="Useful Links Guide Page.html">Guides</a></li>
+			<li><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+            <li><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div class="body">
+	<div class="container-fluid" id="tbr">
+		<div class="col-lg-5 col-md-5">
+			<h1>Welcome to Smart Nation website </h1>
+			<p>This is an informational website whereby we aim to empower those around
+			our seniors so that they can assist them as Singapore moves towards a Smart Nation.
+			We also want to allow the seniors to <strong>understand, appreciate and embrace</strong> Smart Nation.
+			After all, our seniors have worked hard their whole life and now it is time for them to enjoy. Thus with the advent
+			of Smart Nation, we hope that when the elderly learns more about Smart Nation, they can use the technology to their
+			advantage.</p>
+		</div>
+		<div class="col-lg-7 col-md-7" id="text1">
+			<p>Help us to display relevant content! Select who you are!</p>
+			<h1>I'm a...</h1>
+			<nav id="option">
+				<ul>
+					<li><a class="btn btn-danger" href="#" onclick="user('Social Worker')">Social Worker</a></li>
+					<li><a class="btn btn-danger" href="#" onclick="user('Children')">Family of Elderly</a></li>
+					<li><a class="btn btn-danger" href="#" onclick="user('Elderly')">Elderly</a></li>
+				</ul>
+			</nav>
+			<p>*Due to strict PDPA laws, we do not collect personal data. All data is cached in this computer and stored as cookies.</p>
+		</div>
+	</div>
+	<div class="container-fluid" id="welcome">
+		<div class="col-lg-5 col-md-5">
+			<h1>Welcome to Smart Nation website </h1>
+			<p>This is an informational website whereby we aim to empower those around
+			our seniors so that they can assist them as Singapore moves towards a Smart Nation.
+			We also want to allow the seniors to <strong>understand, appreciate and embrace</strong> Smart Nation.
+			After all, our seniors have worked hard their whole life and now it is time for them to enjoy. Thus with the advent
+			of Smart Nation, we hope that when the elderly learns more about Smart Nation, they can use the technology to their
+			advantage.</p>
+		</div>
+		<div class="col-lg-7 col-md-7">
+			<img class="img-responsive" id=SNhomepic style="padding-right:0px" src="../Media/smart-nation-skyline.jpg">
+		</div>
+	</div>
+	<hr>
+	<h2 id="usefulHeading">Links that may be relevant to you</h2>
+	<div class="container-fluid" id="standard">
+		<div class="row">
+        <div class="col-md-4">
+          <h2>Workshops</h2>
+          <p>Need help or want to learn more about technology?
+		  Find more about the latest workshops and events here.</p>
+          <p><a class="btn btn-primary" href="Workshops Page.html" role="button">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Smart Nation Solutions</h2>
+          <p>Want to know more about Smart Nations products that you can get for your home or for your seniors at home.
+		  Fear not. Check this out to find out more!</p>
+          <p><a class="btn btn-primary" href="Industry Partners Page.html" role="button">View details »</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>News</h2>
+          <p>Want to know more about the latest developments in Singapore's drive to become a Smart Nation?
+		  Read the latest technology news here...</p>
+          <p><a class="btn btn-primary" href="Newsroom Page.html" role="button">View details »</a></p>
+        </div>
+		</div>
+    </div>
+	<div class="container-fluid" id="socialWorker">
+      <div class="row">
+		<div class="col-md-4">
+          <h2>Tutor Dashboard</h2>
+          <p>Do you want to help the elderly, click here to sign up as a tutor! You can also click here to login!</p>
+          <p><a class="btn btn-primary" href="Useful Links Tutor Dashboard Page.html" role="button">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Frequently asked questions</h2>
+          <p>Do the elderly fear Smart Nation? With Singapore pushing forward to become a Smart 
+		  Nation, some fear hacking, while some fear loss of privacy. Check out this page to 
+		  answer some of the elderlies biggest fears.</p>
+          <p><a class="btn btn-primary" href="Useful Links FAQ Page.html" role="button">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Guides</h2>
+          <p>Does the elderly need help with their smartphone? Or do they want to learn how they can use their phone
+		  to join Singapore as we move forward to become a Smart Nation? Check the guides out here!</p>
+          <p><a class="btn btn-primary" href="Useful Links Guide Page.html" role="button">View details »</a></p>
+       </div>
+      </div>
+		<div class="input-group">
+		<br>
+		<br>
+		<p>In case you selected the wrong user, click the button below to reselect user</p>
+			<button type="" class="btn btn-danger" onClick="changeUser()">Change user</button>
+		</div>
+    </div>
+	
+	<div class="container-fluid" id="children">
+      <div class="row">
+    <div class="col-md-4">
+          <h2>Smart Nation Solutions</h2>
+          <p>Want to know more about Smart Nations products that you can get for your home or for your seniors at home.
+		  Fear not. Check this out to find out more!</p>
+          <p><a class="btn btn-primary" href="Industry Partners Page.html" role="button">View details »</a></p>
+    </div>
+    <div class="col-md-4">
+          <h2>Sign up for Beta Testing</h2>
+          <p>Are you or your seniors interested in testing out new technology for 
+		  your elderly at home? You can sign up here to experience the latest in Smart Nation!</p>
+          <p><a class="btn btn-primary" href="Useful Links Beta Test Page.html" role="button">View details »</a></p>
+    </div>
+	<div class="col-md-4">
+          <h2>Guides</h2>
+          <p>Does your parent/grandparent have a new phone and need help? Or do you want to help them learn more advanced features about their Smart Phone?
+		  Check it out here!</p>
+          <p><a class="btn btn-primary" href="Useful Links Guide Page.html" role="button">View details »</a></p>
+    </div>
+      </div>
+		<div class="input-group">
+		<br>
+		<br>
+		<p>In case you selected the wrong user, click the button below to reselect user</p>
+			<button type="" class="btn btn-danger" onClick="changeUser()">Change user</button>
+		</div>
+    </div>
+	
+	<div class="container-fluid" id="elderly">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>News</h2>
+          <p>Want to know more about the latest developments in Singapore's drive to become a Smart Nation?
+		  Read the latest technology news here...</p>
+          <p><a class="btn btn-primary" href="Newsroom Page.html" role="button">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Guides</h2>
+          <p>Got a new phone and need help? Or do you want to learn more advanced features about your Smart Phone?
+		  Check it out here!<p>
+          <p><a class="btn btn-primary" href="Useful Links Guide Page.html" role="button">View details »</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Workshops</h2>
+          <p>Need help or want to learn more about technology?
+		  Find more about the latest workshops and events here</p>
+          <p><a class="btn btn-primary" href="Workshops Page.html" role="button">View details »</a></p>
+        </div>
+      </div>
+	  <div class="input-group">
+	  <br>
+	  <br>
+	  <p>In case you selected the wrong user, click the button below to reselect user</p>
+		<button type="" class="btn btn-danger" onClick="changeUser()">Change user</button>
+	  </div>
+    </div>
+</div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+	<script src="../server/server_HomePage.js"></script>
+	<script>
+	firstTime();
+	</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Dashboard+CSS.css"/>
+<!--CSS Style Sheet for jQuery Export Plugin-->
+<link rel="stylesheet" type="text/css" href="../CSS/tableexport.css"/>
+<style>
+/* CSS CODE FOR THIS PAGE IS INSIDE DASHBOARD+CSS.css*/
+</style>
+<title>Tutee Dashboard-Useful Links</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Useful Links Tutee Dashboard Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <ul class="nav navbar-nav navbar-right">
+        <li id="backtomain"><a href="Useful Links Tutor Form Page.html"><i class="material-icons" style="font-size:24px;">exit_to_app</i>Return back to Website</a></li>
+      </ul>
+	  </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div id="LandingPage" class="container">
+<div class="row">
+<div class="col-md-12">
+<img id="dashboardPic" class="img-responsive" src="../Media/DashboardLogin.jpg"></img>
+<h1>Dashboard - Tutee</h1>
+<h3>Reminder:</h3>
+<p>Dashboard requires JavaScript to function correctly. Please check JavaScript compatibility <a href="https://www.whatismybrowser.com/detect/is-javascript-enabled">here</a>.</p>
+<h2 id="dashboardAuthMsg">Authorised Access Only</h2>
+</div>
+</div>
+<hr>
+    <div id="LandingContainer" class="row">
+	<div class="col-md-12">
+	<h1 id="LandingHeader">Welcome! How would you like to proceed?</h1>
+	</div>
+	</div>
+	<br>
+	<div class="row">
+	<div class="col-md-12">
+	<button id="chooseRN" type="button" class="btn btn-primary btn-block center-block" onclick="DirectRN ();">Use my Request Number to find my request</button>
+	</div>
+	</div>
+	<br>
+	<div class="row">
+	<div class="col-md-12">
+	<button id="chooseinfo" type="button" class="btn btn-primary btn-block center-block" onclick="DirectInfo ();">Use my Consultation Information to find my request</button>
+	</div>
+	</div>
+	</div>
+</div>	
+    </div>
+<div id="dashboardinterface" class="container">
+		  <div id="dashboardRequestNumber" class="container-fluid">
+          <h1 class="page-header">Dashboard - Tutee</h1>
+		  <h3 class="sub-header">Retrieve Request Status via Request Number</h3> 
+		  <p><i class="material-icons" style="font-size: 35px;">access_time</i> This process should take about 5 minutes to complete...</p>
+		  <br>
+		  <div id="alertRequest"></div>
+	<div class="row">
+        <form class="form-horizontal" onsubmit="CheckRequestNumber();return false;" action="#">
+		  <fieldset>
+		  <legend>Enter your 6 digit Request Number</legend>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Request Number:</label>
+            <div class="col-lg-8">
+                <input id="RequestNumber" class="form-control" type="text" name="requestnumber" placeholder="123456" pattern="^\d{6}$" autocomplete="off" required>
+            </div>
+          </div>
+		  <div class="form-group">
+		  <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <button type="submit" class="btn btn-primary" value="submit">Check Request Number</button>
+			  <button id="FormResetBtn1" type="reset"  class="btn btn-default" value="reset">Clear Field</button>
+            </div>
+			</div>
+          </div>
+        </form>
+		<br>
+  </div>
+		  <div id="dashboardInfo" class="container-fluid">
+          <h1 class="page-header">Dashboard - Tutee</h1>
+		  <h3 class="sub-header">Retrieve Request Status via provided Information</h3> 
+		  <p><i class="material-icons" style="font-size: 35px;">access_time</i> This process should take about 5 minutes to complete...</p>
+		  <br>
+		  <div id="alertInfo"></div>
+        <form class="form-horizontal" onsubmit="CheckInformation();return false;" action="#">
+		  <fieldset>
+		  <legend>Please enter your Consultation Details</legend>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Tutor Choice:</label>
+            <div class="col-lg-8">
+	  <select name="TutorChoice" id="TutorChoice" class="form-control" autocomplete="false" required>
+    <option value="" selected></option>
+	<option value="Jonathan Tan">Jonathan Tan</option>
+    <option value="Marrianne Clarke">Marrianne Clarke</option>
+    <option value="Sarah Sidle">Sarah Sidle</option>
+	<option value="Keith Cheng">Keith Cheng</option>
+  </select>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Consultation Date:</label>
+            <div class="col-lg-8">
+              <input type="date" class="form-control" id="ConsultationDate" autocomplete="false" required></input>
+            </div>
+          </div>
+		   <div class="form-group">
+            <label class="col-lg-3 control-label">Consultation Time:</label>
+            <div class="col-lg-8">
+              <input type="time" class="form-control" id="ConsultationTime" autocomplete="false" required></input>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Consultation Duration:</label>
+            <div class="col-lg-8">
+              <select name="ConsultationDuration" id="ConsultationDuration" class="form-control" autocomplete="false" required>
+    <option value="30 Minutes">30 Minutes</option>
+    <option value="1 hour" selected>1 hour</option>
+    <option value="1 hour and 30 minutes">1 hour and 30 minutes</option>
+	<option value="2 hours">2 hours</option>
+  </select>
+            </div>
+          </div>
+		  </fieldset>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <button type="submit" class="btn btn-primary" value="submit">Submit Information</button>
+			  <button id="FormResetBtn2" type="reset" class="btn btn-default" value="reset">Clear Fields</button>
+            </div>
+          </div>
+        </form>
+		<br>
+  </div>
+		  <div id="dashboardDisplayRequest" class="container-fluid">
+          <h1 class="page-header">Dashboard - Tutee</h1>
+		  <h3 class="sub-header">Here is your requested information regarding your consultation request:</h3> 
+		  <br>
+		  <ul id="DisplayRequestList">
+		  <li>Your unique 6 digit request number is #<span id="DisplayRequestNumber"></span>. </li>
+		  <li>Your current request status is <span id="DisplayRequestStatus"></span>. </li>
+		  <li>Your chosen Tutor is <span id="DisplayTutorChoice"></span>. </li>
+		  <li>Your consultation is scheduled to be on <span id="DisplayConsultationDate"></span>,
+		  at <span id="DisplayConsultationTime"></span>, 
+		  for <span id="DisplayConsultationDuration"></span>. </li>
+		  </ul>
+		  <br>
+		   <p id="DisplayRequestFlag"><i class="material-icons" style="font-size:48px;">error_outline</i>If you need to change your consultation details, please contact us at <a href="mailto:smartnationnyp@gmail.com">smartnationnyp@gmail.com</a> 
+		  with the subject "Change of Consultation Details". Changes are subjected to Tutor approval.</p>
+          </div>
+      </div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<br>
+	<br>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+	<script src="../Server/server_DashboardTutee.js"></script>
+	<script>
+	Database();
+	</script>
+</body>
+</html>

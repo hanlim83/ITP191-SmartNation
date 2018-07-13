@@ -1,0 +1,168 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+
+</style>
+<title>Interest Form-Useful Links</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+var inputGender=document.getElementById("gender");
+
+function genderType(gender){
+inputGender=gender;
+}
+
+function saveToStorage(){
+
+var interests;
+
+var inputName=document.getElementById("name").value;
+//var inputGender=document.getElementById("gender").value;
+var inputEmail=document.getElementById("email").value;
+var inputContact=document.getElementById("contact").value;
+var inputcomments=document.getElementById("comments").value;
+
+// construct an object
+var interestObj={};
+
+interestObj["name"]=inputName;
+interestObj["gender"]=inputGender;
+interestObj["email"]=inputEmail;
+interestObj["contact"]=inputContact;
+interestObj["comments"]=inputcomments;
+
+// check if localstorage has the array of interest objects 
+if (localStorage["interests"]) {
+  interests=JSON.parse(localStorage["interests"]);
+}
+else {
+  interests=[]; // no existing, create new array
+}
+
+// add the object to the array
+interests.push(interestObj);
+
+// store the updated array to the localStorage
+localStorage["interests"]=JSON.stringify(interests);
+
+return false;
+}
+
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+		<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+	    <li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+            <li><a href="Useful Links Guide Page.html">Guides</a></li>
+			<li><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+            <li class="active"><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div class="container">
+
+<h2>Be the first to experience new Techs in your house! Simply fill in the form below.</h2>
+
+<form onsubmit="saveToStorage()">
+
+  <fieldset>
+    <legend>Info of Elderly</legend>
+
+    <div class="form-group">
+      <label for="name" class="form-control-label" >Name of Elderly</label>
+      <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+    </div>
+	
+	<div class="form-group">
+	<label for="gender" class="form-control-label" >Gender</label><br>
+		<input type="radio" id="gender" name="gender" value="Male" onclick="genderType('Male')"> Male<br>
+		<input type="radio" id="gender" name="gender" value="Female"  onclick="genderType('Female')"required> Female<br>	
+	</div>
+	
+	<div class="form-group">
+      <label for="email" class="form-control-label">Email address(if any)</label>
+      <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+	
+	<div  class="form-group">
+	<label for="contact" class="form-control-label">Contact number</label>
+	<input type="contactnum" id="contact" class="form-control" placeholder="Phone number" title="8 digits telephone number" pattern="\d{8}" required>
+	</div>
+	
+
+  </fieldset>
+  <fieldset>
+	 <div class="form-group">
+      <label for="comments" class="form-control-label">Comments(if any)</label>
+      <textarea id="comments" class="form-control" rows="3"></textarea>
+    </div>
+
+
+  </fieldset>
+  <button  class="btn btn-primary" type="submit">Submit</button>
+  <button class="btn btn-primary" type="reset">Reset</button>
+</form>
+
+</div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<br>
+	<br>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+</body>
+</html>

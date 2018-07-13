@@ -1,0 +1,474 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<script src="https://s3-us-west-2.amazonaws.com/reallysimpleweather/reallysimpleweather-1.1.0.min.js"></script>
+
+
+<style>
+<!--* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*-->
+
+body {
+  margin:0 ;
+}
+/* card */
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin-top: 50px;
+  min-width: 350px;
+  max-width: 400px;
+}
+@media (min-width: 576px) {
+  .card-deck {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .card-deck .card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0%;
+        -ms-flex: 1 0 0%;
+            flex: 1 0 0%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card-deck .card:not(:first-child) {
+    margin-left: 15px;
+  }
+  .card-deck .card:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+.card-img-top {
+  border-top-right-radius: calc(0.25rem - 1px);
+  border-top-left-radius: calc(0.25rem - 1px);
+  max-width: 400px;
+  max-height: 300px;
+  border-style:solid;
+    border-width:thin;
+}
+
+.card-block {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 1.25rem;
+  
+}
+.card-text:last-child {
+  margin-bottom: 0;
+}
+.card-title {
+	border
+  margin-bottom: 0.75rem;
+}
+.card-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: #f7f7f9;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-footer:last-child {
+  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+}
+.text-muted {
+  color: #636c72 !important;
+} 	
+
+
+.linkNews{
+  transition: 0.3s ease;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+  padding: 20px 0;
+  margin: 0 20px;
+}
+.linkNews:hover {
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+  padding: 6px 0; 
+}
+.justify-content-center {
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+#date{
+	padding:10px;
+}
+</style>
+<title>Newsroom</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+
+	/*var month;
+	var NoMonth;
+	switch()
+	{
+		case 1:
+			month = "January";
+			NoMonth = "1"
+			break;
+		case 2:
+			month = "February";
+			NoMonth = "2"
+			break;
+		case 3:
+			month = "March";
+			NoMonth = "3";
+			break;
+		case 4:
+			month = "April"
+			NoMonth= "4";
+			break;
+		case  5:
+			month = "Msy";
+			NoMonth = "5";
+			break;
+		case 6:
+			month = "June";
+			NoMonth = "6";
+			break;
+		case 7;
+			month = "July";
+			NoMonth = "7";
+			break;
+		case 8:
+			month = "August";
+			NoMonth = "8";
+			break;
+		case 9: 
+			month = "September";
+			NoMonth = "9";
+			break;
+		case 10:
+			month = "October";
+			NoMonth = "10";
+			break;
+		case 11:
+			month = "November";
+			NoMonth = "11";
+			break;
+		case 12: 
+			month = "December";
+			NoMonth = "12"
+			break;
+	}*/
+
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+		<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+	    <li class="active"><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+            <li><a href="Useful Links Guide Page.html">Guides</a></li>
+			<li><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+            <li><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+
+<ul class="nav nav-tabs nav justify-content-center" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link active" data-toggle="tab" href="#latest" role="tab">Top News</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#Technology" role="tab">Technology</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#Living" role="tab">Living</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#Health" role="tab">Health</a>
+		</li>
+		<li>
+		<form class="form-inline my-2 my-lg-0">
+		  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+		  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onkeyup="showResult(this.value)">Search</button>
+		  <div id="livesearch"></div>
+		</form>
+		</li>
+		<li class="nav-item">
+			<p id="date" class="nav-link" data-toggle="tab" role="tab" ></p>
+		</li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="latest" role="tabpanel">
+  <div class="card-deck">
+  <div class="card" id="services">
+    <img class="card-img-top" src="../Media/st1.jpg" alt="Card image cap">
+    <div class="card-block">
+			<div class="card__meta">
+    					<a href="#latest">Technology</a>
+                        <time>March 17 2017</time>
+    				</div>
+      <h4 class="card-title">Tomorrow's Cities: Singapore's plans for a smart nation</h4>
+      <p class="card-text">Singapore is aiming to be the world's first Smart Nation - but what does that actually entail? You know what it's like. You're waiting for the bus ...</p>
+	  </br>
+	   <a href="http://www.bbc.com/news/technology-39641262" target="_blank" class="btn btn-default" role="button">Read More</a>
+	   
+    </div>
+  </div>
+  
+  <div class="card" id="tech">
+    <img class="card-img-top" src="../Media/st5.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+    		<a href="#Technology" >Technology</a>
+                <time>July 17 2017</time>
+    	</div>
+		<h4 class="card-title">Using AI to boost cyber defences</h4>
+		<p class="card-text">The Singapore Government is stepping up investments in artificial intelligence (AI) to better counter cyber threats from hackers who are also increasingly using AI to vary their strategies.</p>
+		<a href="http://www.straitstimes.com/opinion/using-ai-to-boost-cyber-defences" target="_blank" class="btn btn-default" role="button">Read More</a>
+    </div>
+  </div>
+  
+   <div class="card" id="living">
+    <img class="card-img-top" src="../Media/st3.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+			<a href="#living">Living</a>
+                <time>March 31 2017</time>
+    	</div>
+      <h4 class="card-title">What is life like living in a smart nation?</h4>
+      <p class="card-text">Expect to wake up with curtains automatically drawn apart at the break of dawn or at a set time...</p>
+		<a href="http://www.straitstimes.com/opinion/what-is-life-like-living-in-a-smart-nation" target="_blank" class="btn btn-default" role="button">Read More</a>
+
+	  </br>
+    </div>
+	</div>
+  
+  <div class="card" id="health">
+    <img class="card-img-top" src="../Media/st2.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+    		<a href="#health">Health</a>
+				<time>March 30 2017</time>
+		</div>
+      <h4 class="card-title">Quick action on skin issues with Tele-Derm</h4>
+      <p class="card-text">Instead of having to travel to the National Skin Centre (NSC), in Mandalay Road near Tan Tock Seng Hospital, for an appointment, ...</p>
+		<a href="http://www.straitstimes.com/singapore/health/quick-action-on-skin-issues-with-tele-derm" target="_blank" class="btn btn-default" role="button">Read More</a>
+
+    </div>
+  </div>
+
+ 
+  
+	<div class="card" id="tech">
+    <img class="card-img-top" src="../Media/st4.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+    		<a href="#Technology">Technology</a>
+				<time>March 31 2016</time>
+    	</div>
+      <h4 class="card-title">Artificial intelligence plays key role in securing smart cities, but people are 'sensors' too</h4>
+      <p class="card-text">SINGAPORE - Artificial intelligence (AI) is billed as the next big thing for ensuring urban security as nations embark on smart city projects to improve urban living...</p>
+		<a href="http://www.straitstimes.com/singapore/artificial-intelligence-plays-key-role-in-securing-smart-cities-but-people-are-sensors-too" target="_blank" class="btn btn-default" role="button">Read More</a>
+
+    </div>
+	</div>
+  
+  <div class="card" id="living">
+    <img class="card-img-top" src="../Media/st6.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+    		<a href="#living">Living</a>
+                <time>May 31 2015</time>
+    	</div>
+      <h4 class="card-title">$2.4b worth of tenders to be called this year to deliver Smart Nation projects</h4>
+      <p class="card-text">Singapore's tech budget this year will be close to last year's record high as the country gears up to deliver results on a Smart Nation sensor network, and set up its first sophisticated cyber threat monitoring centre...</p>
+		<a href="http://www.straitstimes.com/singapore/24b-worth-of-tenders-to-be-called-this-year-to-deliver-smart-nation-projects" target="_blank" class="btn btn-default" role="button">Read More</a>
+    </div>
+  </div>
+
+</div></div>
+
+
+  <div class="tab-pane" id="Technology" role="tabpanel">
+	<div class="card-deck">
+	
+	<div class="card" id="tech">
+    <img class="card-img-top" src="../Media/st5.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+    		<a href="#Technology" >Technology</a>
+                <time>July 17 2017</time>
+    	</div>
+		<h4 class="card-title">Using AI to boost cyber defences</h4>
+		<p class="card-text">The Singapore Government is stepping up investments in artificial intelligence (AI) to better counter cyber threats from hackers who are also increasingly using AI to vary their strategies.</p>
+		<a href="http://www.straitstimes.com/opinion/using-ai-to-boost-cyber-defences" target="_blank" class="btn btn-default" role="button">Read More</a>
+    </div>
+	</div>
+	
+	<div class="card" id="tech">
+    <img class="card-img-top" src="../Media/st4.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+    		<a href="#Technology">Technology</a>
+				<time>March 31 2016</time>
+    	</div>
+      <h4 class="card-title">Artificial intelligence plays key role in securing smart cities, but people are 'sensors' too</h4>
+      <p class="card-text">SINGAPORE - Artificial intelligence (AI) is billed as the next big thing for ensuring urban security as nations embark on smart city projects to improve urban living...</p>
+		<a href="http://www.straitstimes.com/singapore/artificial-intelligence-plays-key-role-in-securing-smart-cities-but-people-are-sensors-too" target="_blank" class="btn btn-default" role="button">Read More</a>
+
+    </div>
+	</div>
+	
+	 <div class="card" id="services">
+    <img class="card-img-top" src="../Media/st1.jpg" alt="Card image cap">
+    <div class="card-block">
+			<div class="card__meta">
+    					<a href="#tech">Technology</a>
+                        <time>March 17 2017</time>
+    				</div>
+      <h4 class="card-title">Tomorrow's Cities: Singapore's plans for a smart nation</h4>
+      <p class="card-text">Singapore is aiming to be the world's first Smart Nation - but what does that actually entail? You know what it's like. You're waiting for the bus ...</p>
+	  </br>
+	   <a href="http://www.bbc.com/news/technology-39641262" target="_blank" class="btn btn-default" role="button">Read More</a>
+	   
+    </div>
+	</div>
+	
+	</div>
+	</div>
+	
+	<div class="tab-pane" id="Living" role="tabpanel">
+	<div class="card-deck">
+	  <div class="card" id="living">
+    <img class="card-img-top" src="../Media/st1.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+    		<a href="#living">Living</a>
+                <time>May 31 2015</time>
+    	</div>
+      <h4 class="card-title">$2.4b worth of tenders to be called this year to deliver Smart Nation projects</h4>
+      <p class="card-text">Singapore's tech budget this year will be close to last year's record high as the country gears up to deliver results on a Smart Nation sensor network, and set up its first sophisticated cyber threat monitoring centre...</p>
+		<a href="http://www.straitstimes.com/singapore/24b-worth-of-tenders-to-be-called-this-year-to-deliver-smart-nation-projects" target="_blank" class="btn btn-default" role="button">Read More</a>
+
+    </div>
+  </div>
+  
+  <div class="card" id="living">
+    <img class="card-img-top" src="../Media/st3.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+			<a href="#living">Living</a>
+                <time>March 31 2017</time>
+    	</div>
+      <h4 class="card-title">What is life like living in a smart nation?</h4>
+      <p class="card-text">Expect to wake up with curtains automatically drawn apart at the break of dawn or at a set time...</p>
+		<a href="http://www.straitstimes.com/opinion/what-is-life-like-living-in-a-smart-nation" target="_blank" class="btn btn-default" role="button">Read More</a>
+
+	  </br>
+    </div>
+	</div>
+  
+  </div>
+  </div>
+  
+  <div class="tab-pane" id="Health" role="tabpanel">
+	<div class="card-deck">
+<div class="card" id="health">
+    <img class="card-img-top" src="../Media/st2.jpg" alt="Card image cap">
+    <div class="card-block">
+		<div class="card__meta">
+    		<a href="#health">Health</a>
+				<time>March 30 2017</time>
+		</div>
+      <h4 class="card-title">Quick action on skin issues with Tele-Derm</h4>
+      <p class="card-text">Instead of having to travel to the National Skin Centre (NSC), in Mandalay Road near Tan Tock Seng Hospital, for an appointment, ...</p>
+			<a href="http://www.straitstimes.com/singapore/health/quick-action-on-skin-issues-with-tele-derm" target="_blank" class="btn btn-default" role="button">Read More</a>
+
+    </div>
+  </div>
+	</div>
+  </div>
+</div>
+
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+<script type="text/javascript">
+	var d =new Date();
+	document.getElementById("date").innerHTML = d.toDateString();
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+
+</style>
+<title>报名表格-Useful Links</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+function saveToStorage(){
+
+var interests;
+
+var inputName=document.getElementById("name").value;
+var inputGender=document.getElementById("gender").value;
+var inputEmail=document.getElementById("email").value;
+var inputContact=document.getElementById("contact").value;
+var inputcomments=document.getElementById("comments").value;
+
+// construct an object
+var interestObj={};
+
+interestObj["name"]=inputName;
+interestObj["gender"]=inputGender;
+interestObj["email"]=inputEmail;
+interestObj["contact"]=inputContact;
+interestObj["comments"]=inputcomments;
+
+// check if localstorage has the array of interest objects 
+if (localStorage["interests"]) {
+  interests=JSON.parse(localStorage["interests"]);
+}
+else {
+  interests=[]; // no existing, create new array
+}
+
+// add the object to the array
+interests.push(interestObj);
+
+// store the updated array to the localStorage
+localStorage["interests"]=JSON.stringify(interests);
+
+return false;
+}
+
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home Page.html"><i class="material-icons">home</i>主页</a></li>
+        <li><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>关于我们</a></li>
+		<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>研讨会</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>智能产品</a></li>
+	    <li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>新闻室</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>有关网站<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li><a href="Useful Links FAQ Page.html">常问问题(FAQ)</a></li>
+            <li><a href="Useful Links Guide Page.html">手册</a></li>
+			<li><a href="Useful Links Tutor Form Page.html">邀请导师</a></li>
+            <li class="active"><a href="Useful Links Beta Test Page.html">报名表格</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">导师仪表板</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>换语言<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="active"><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div class="container">
+
+<h2>想成为第一批尝试智慧产品的人吗？您只需填以下的表格。</h2>
+
+<form onsubmit="saveToStorage()">
+
+  <fieldset>
+    <legend>您的个人资料</legend>
+
+    <div class="form-group">
+      <label for="name" class="form-control-label" >姓名</label>
+      <input type="text" id="name" class="form-control" placeholder="您的性名" required>
+    </div>
+	
+	<div class="form-group">
+	<label for="gender" class="form-control-label" >性别</label><br>
+	 <input type="radio" id="gender" name="gender" value="Male" required> 男<br>
+	<input type="radio" id="gender" name="gender" value="Female" required> 女<br>
+	</div>
+	
+	<div class="form-group">
+      <label for="email" class="form-control-label">电邮(若您有)</label>
+      <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="您的电邮">
+    </div>
+	
+	<div  class="form-group">
+	<label for="contact" class="form-control-label">联络号码</label>
+	<input type="contactnum" id="contact" class="form-control" placeholder="联络号码" title="8 digits telephone number" pattern="\d{8}" required>
+	</div>
+	
+
+  </fieldset>
+  <fieldset>
+	 <div class="form-group">
+      <label for="comments" class="form-control-label">评语(若您有)</label>
+      <textarea id="comments" class="form-control" rows="3"></textarea>
+    </div>
+
+
+  </fieldset>
+  <button  class="btn btn-primary" type="submit">填交表格</button>
+  <button class="btn btn-primary" type="reset">重启</button>
+</form>
+
+</div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<br>
+	<br>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">版权 &copy 2017, ITP-191 计划组 SF1701-2</p>
+		<p class="text-muted">发现任何问题吗? 给我们您的反馈在<a href="mailto:smartnationnyp@gmail.com">这里</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+</body>
+</html>

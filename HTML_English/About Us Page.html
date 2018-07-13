@@ -1,0 +1,410 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/Header+Footer.css"/>
+<style>
+/* ENTER CSS CODE APPLICABLE FOR THIS PAGE ONLY HERE*/
+.jumbotron {
+padding: 4rem 2rem;
+}
+.display-3 {
+text-align: center;
+}
+.row {
+text-align: center;
+font-size : 18px;
+}
+.description {
+text-align : left;
+}
+#SN_Logo {
+float: right;
+padding: 10px;
+}
+#NYP_Logo {
+float: right;
+padding: 10px;
+}
+#NYP_Button {
+float: left;
+}
+#SIT_Button {
+float: right;
+}
+#ProfileImg1 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#ProfileImg1:hover {opacity: 0.7;}
+#ProfileImg2 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#ProfileImg2:hover {opacity: 0.7;}
+#ProfileImg3 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#ProfileImg3:hover {opacity: 0.7;}
+#ProfileImg4 {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#ProfileImg4:hover {opacity: 0.7;}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+#PicModal .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+#PicModal .close:hover,
+#PicModal .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+		}
+		}
+#formAfter {
+display: none;
+}
+#formFlag{
+color:red;
+font-weight: bold;
+}
+#formsubmit{
+float: left;
+}
+#formclear{
+float: right;
+}
+#FeedbackAlert {
+margin-bottom: 0px;
+font-size: 16px;
+}
+#ScrollToFeedback {
+font-weight : bold;
+}
+</style>
+<title>About Us</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+function storeData() {
+		var FeedbackArray;
+		if (localStorage["Feedback"]){
+			FeedbackArray = JSON.parse(localStorage["Feedback"]);
+		}
+		else {
+			FeedbackArray = [
+{"Name":"Somebody","Email":"somebody@example.com","Feedback":"Example Feedback","Timestamp":"2017-08-03T06:11:40.839Z"},
+{"Name":"Somebody","Email":"somebody@example.com","Feedback":"Example Feedback","Timestamp":"2017-08-04T08:09:40.839Z"},
+{"Name":"Somebody","Email":"somebody@example.com","Feedback":"Example Feedback","Timestamp":"2017-08-05T09:07:40.839Z"}
+];
+		}
+		var obj={};
+		$("#FeedbackForm :input").prop("disabled", true);
+		$("#FeedbackForm :input").attr("readonly","true");
+		var obj={};
+		var name = document.getElementById("userName").value;
+		var email = document.getElementById("userEmail").value;
+		var feedback = document.getElementById("userFeedback").value;
+		var TimeStamp = new Date();
+	    obj["Name"] = name;
+		obj["Email"] = email;
+		obj["Feedback"] = feedback;
+		obj["Timestamp"] = TimeStamp;
+		FeedbackArray.push(obj);
+		localStorage["Feedback"]=JSON.stringify(FeedbackArray);
+		formafter.style.display="block";
+		feedbackfooter.style.display="none";
+	}	
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home Page.html"><i class="material-icons">home</i>Home</a></li>
+        <li class="active"><a href="About Us Page.html"><i class="material-icons" style="font-size:24px;">people</i>About Us</a></li>
+		<li><a href="Workshops Page.html"><i class="material-icons" style="font-size:24px;">school</i>Workshops</a></li>
+		<li><a href="Industry Partners Page.html"><i class="material-icons" style="font-size:24px;">work</i>Smart Solutions</a></li>
+	    <li><a href="Newsroom Page.html"><i class="material-icons" style="font-size:24px;">announcement</i>Newsroom</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">info</i>Useful Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li><a href="Useful Links FAQ Page.html">Frequently Asked Questions (FAQ)</a></li>
+            <li><a href="Useful Links Guide Page.html">Guides</a></li>
+			<li><a href="Useful Links Tutor Form Page.html">Get a Tutor</a></li>
+            <li><a href="Useful Links Interest Form Page.html">Interest Form</a></li>
+			<li><a href="Useful Links Tutor Dashboard Page.html">Tutor Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">language</i>Change Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="../HTML_English/Home Page.html">English - 英文</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../HTML_Chinese/Home Page.html">Chinese - 中文</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div id="FeedbackAlert" class="alert alert-info alert-dismissable fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  Looking for the Feedback Form? Scroll to the bottom of the page or click <a id="ScrollToFeedback" href="#" onlick="">here</a> for auto-scroll!
+</div>
+<div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Project Outline</h1>
+		
+        <p>We're a group of students from Nanyang Polytechnic's School of Information Technology. 
+		As part of our Web Application Development and Project (WADP) module, we are tasked to develop a website to spread awareness about Smart Nation, specifcally elderly people whom are ignorant of such techologies.
+		</p>
+		<p><a id="NYP_Button" class="btn btn-info btn-lg" href="http://www.nyp.edu.sg" role="button">Nanyang Polytechnic »</a></p>
+		<p><a id="SIT_Button" class="btn btn-info btn-lg" href="http://www.nyp.edu.sg/schools/sit.html" role="button">School of Information Technology »</a></p>
+      </div>
+    </div>
+<div class="container-fluid">
+<!--
+      <div class="row">
+        <div class="col-md-12">
+          <h2>About Smart Nation</h2>
+		  <img id="SN_Logo" class="img-responsive" src="../Media/smart-nation-skyline.jpg" width="500px" height="206px" alt="Picture of Smart Nation"></img>
+          <p class="description"> Smart Nation is Singapore's national effort to co-create a future of better living for all through tech-enabled solutions. 
+		  It aims to rally the collective efforts of people, businesses and government to work together to support better living, create more opportunities, and support stronger communities by harnessing info-comm technologies, networks and big data.
+		  </p>
+		  <p class="description">
+		  Through strategic deployment of technology across the nation, leveraging on investments in digital infrastructure, a tech savvy population and a single layer government that can work quickly to coordinate policies and synergise efforts, 
+the Smart Nation initiative strives to develop people-centric solutions to address global urban challenges.
+         </p>
+		 <p class="description">
+Singapore's Smart Nation initiative was officially launched by Prime Minister Lee Hsien Loong on 24 November 2014.
+		  </p>
+		  <p class="description">
+		  The initiative is coordinated by the Smart Nation and Digital Government Office (SNDGO) in the Prime Minister's Office (PMO), and supported by other government agencies. 
+		  </p>
+        </div>
+      </div>
+	  <hr>
+	  -->
+	  <div class="row">
+        <div class="col-md-12">
+          <h2>About Nanyang Polytechinic</h2>
+		  <img id="NYP_Logo" class="img-responsive" src="../Media/NYP_Logo.svg" alt="Nanyang Polytechnic Logo"></img>
+          <p class="description">Nanyang Polytechnic (NYP) is the 4th polytechnic located in the precinct of Yio Chu Kang in the town of Ang Mo Kio, Singapore.
+		  NYP was Established on 1 April 1992 and enrolled its pioneer batch of students for its School of Health Sciences and School of Business Management in July 1992. 
+		  In July 1993, NYP Set up the School of Engineering and the School of Information Technology.
+		  It operated from five temporary campuses - Bukit Merah, Jurong, Outram, Tiong Bahru and Yishun - before moving to its permanent home in Ang Mo Kio in April 1998. 
+		  Currently, Ms Jeanne Liew is the Principal & CEO of Nanyang Polytechnic.
+		  </p>
+        </div>
+      </div>
+</div>
+<hr>
+<div class="container-fluid">
+<div class="row">
+        <div class="col-md-12">
+          <h1>Our Team Members</h1>
+        </div>
+      </div>
+	  <div class="row">
+        <div class="col-md-3">
+		<img id="ProfileImg1" class="img-circle" src="../Media/HansenLimPic.jpg" alt="Hansen's Picture" width="120px" height="120px"></img>
+          <h2>Hansen Lim</h2>
+          <p>The site's main designer</p>
+        </div>
+        <div class="col-md-3">
+		<img id="ProfileImg2" class="img-circle" src="../Media/HugoChiaPic.jpg" alt="Hugo's Picture" width="120px" height="120px"></img>
+          <h2>Hugo Chia</h2>
+          <p>Brains of the Operation</p>
+       </div>
+        <div class="col-md-3">
+		<img id="ProfileImg3" class="img-circle" src="../Media/ShaoQiPic.jpg" alt="Shao Qi's Picture" width="120px" height="120px"></img>
+          <h2>Shao Qi</h2>
+          <p>Guidance Master</p>
+        </div>
+        <div class="col-md-3">
+		<img id="ProfileImg4" class="img-circle" src="../Media/ZhiShengPic.jpg" alt="Zhi Sheng's Picture" width="120px" height="120px"></img>
+          <h2>Zhi Sheng</h2>
+          <p>Publicity Manager</p>
+       </div>
+      </div>
+</div>
+<div id="PicModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="Modalimg"></img>
+  <div id="caption"></div>
+</div>
+<hr>
+<div id="formBefore" class="container">
+<div class="row">
+        <div class="col-md-12">
+          <h1>Feedback Form</h1>
+		  <p>Help us to report any problems or give suggestions to improve our website for other people!</p>
+        </div>
+      </div>
+	  <div class="row">
+        <div class="col-md-12">
+	  <p><i class="material-icons" style="font-size: 35px;">access_time</i> This form should take about 5 minutes to complete...</p>
+	  </div>
+      </div>
+	  <div class="row">
+        <div class="col-md-12">
+          <p id="formFlag">All fields are required to submit form! Inputs will be vaildated</p>
+        </div>
+      </div>
+	  <div  id="formAfter" class="alert alert-success">
+  Feedback Submitted Sucessfully! We look forward to making this website better for everyone!
+</div>
+	  <form id="FeedbackForm" onsubmit="storeData();return false;" action="#">
+	  <fieldset>
+	  <legend>Let's get to know you!</legend>
+	  <div class="form-group">
+	  <label>Your Name:</label>
+	  <input type="text" class="form-control" id="userName" placeholder="John Doe" required></input>
+	  </div>
+	  <div class="form-group">
+	  <label>Your Email:</label>
+	  <input type="email" class="form-control" id="userEmail" placeholder="somebody@email.com" required></input>
+	  </div>
+	  </fieldset>
+	  <fieldset>
+	  <legend>Your Comments/Feedback?</legend>
+	  <div class="form-group">
+	  <label>Your Comments/Feedback:</label>
+	  <textarea class="form-control" rows="7" id="userFeedback" placeholder="Please describe the issue from your point of view..." autocomplete="off" required></textarea>
+	  </div>
+	  <fieldset>
+	  <button id="formsubmit" type="submit" class="btn btn-primary" value="submit">Submit Feedback</button>
+	  <button id="formclear" type="reset" class="btn btn-default" value="Reset">Clear Form</button>
+	  </form>
+	  </div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+	<a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<br>
+	<br>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p id="feedbackFooter" class="text-muted">Facing Problems? Feedback to us using the feedback form above!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+	<script>
+var formbefore = document.getElementById("formBefore");
+var formafter = document.getElementById("formAfter");
+var feedbackfooter = document.getElementById("feedbackFooter");
+var modal = document.getElementById('PicModal');
+var img1 = document.getElementById('ProfileImg1');
+var img2 = document.getElementById('ProfileImg2');
+var img3 = document.getElementById('ProfileImg3');
+var img4 = document.getElementById('ProfileImg4');
+var modalImg = document.getElementById("Modalimg");
+var captionText = document.getElementById("caption");
+var span = document.getElementsByClassName("close")[1];
+img1.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img2.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img3.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img4.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+$("#ScrollToFeedback").click(function(){
+            $('html, body').animate({ scrollTop: $('#formBefore').offset().top }, 'slow');
+   })
+</script>
+</body>
+</html>

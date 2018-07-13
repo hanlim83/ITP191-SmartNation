@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal</title>
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/dataTables.bootstrap.min.css"/>
+<style>
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.nav-justified {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.nav-justified > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #777;
+  text-align: center;
+  background-color: #e5e5e5; /* Old browsers */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e5e5e5));
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+  background-image:      -o-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+  background-image:         linear-gradient(to bottom, #f5f5f5 0%,#e5e5e5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+  background-repeat: repeat-x; /* Repeat the gradient */
+  border-bottom: 1px solid #d5d5d5;
+}
+.nav-justified > .active > a,
+.nav-justified > .active > a:hover,
+.nav-justified > .active > a:focus {
+  background-color: #ddd;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+          box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+}
+.nav-justified > li:first-child > a {
+  border-radius: 5px 5px 0 0;
+}
+.nav-justified > li:last-child > a {
+  border-bottom: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+@media (min-width: 768px) {
+  .nav-justified {
+    max-height: 52px;
+  }
+  .nav-justified > li > a {
+    border-right: 1px solid #d5d5d5;
+    border-left: 1px solid #fff;
+  }
+  .nav-justified > li:first-child > a {
+    border-left: 0;
+    border-radius: 5px 0 0 5px;
+  }
+  .nav-justified > li:last-child > a {
+    border-right: 0;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .masthead {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+#return-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    background-color: #ff0000;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: #ff0000;
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+#Login {
+display : block;
+}
+#authfailedMsg {
+display : none;
+}
+#sessionerrorMsg {
+display : none;
+}
+#logoutMsg {
+display : none;
+}
+#PortalInterface {
+display : none;
+}
+#Overview {
+display : none;
+}
+#FeedbackData {
+display : none;
+}
+#FAQData {
+display : none;
+}
+#BetaTestingData {
+display : none;
+}
+#UpdateProfile {
+display : none;
+}
+#UpdateSuccess {
+	display : none;
+}
+#PasswordMismatch {
+	display : none;
+}
+#PortalLogin {
+margin : auto;
+}
+#PortalLogo {
+
+}
+</style>
+  </head>
+  <body>
+    <div id="Login" class="container">
+	<img id="PortalLogin" class="img-responsive" src="../Media/portal.png" alt="Portal Logo" width="300" height="102"></img>
+      <form id="SignIn" class="form-signin" onsubmit="encryption(); return false;" action="#">
+		<h2 class="form-signin-heading">Please sign in</h2>
+		<div id="authfailedMsg" class="alert alert-warning alert-dismissible fade in" role="alert">
+		 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		Wrong User ID or Password! Please try again.
+		</div>
+		<div id="sessionerrorMsg" class="alert alert-danger" role="alert">A session error occurred! For your security, you have been logged out.</div>
+		<div id="logoutMsg" class="alert alert-success" role="alert">You have been logged out sucessfully!</div>
+        <label for="inputID" class="sr-only">User ID</label>
+        <input type="text" id="inputID" class="form-control" placeholder="User ID" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="material-icons" style="font-size:24px;">vpn_lock</i>Sign in</button>
+      </form>
+    </div>
+<div id="PortalInterface" class="container">
+<div class="masthead">
+		<img id="PortalLogo" class="img-responsive" src="../Media/portal.png" alt="Project SmartNationNYP" width="200" height="68"></img>
+        <nav>
+          <ul class="nav nav-justified">
+            <li id="list1"><a href="#" onclick="SwitchPage(this.innerText)">Overview</a></li>
+            <li id="list2"><a href="#" onclick="SwitchPage(this.innerText)">Feedback Form Data</a></li>
+			<li id="list3"><a href="#" onclick="SwitchPage(this.innerText)">FAQ Data</a></li>
+            <li id="list4"><a href="#" onclick="SwitchPage(this.innerText)">Beta Form Data</a></li>
+            <li id="list5"><a href="#" onclick="SwitchPage(this.innerText)">Update Profile</a></li>
+			<li id="logout"><a href="#" onclick="Logout()">Logout of Portal</a></li>
+          </ul>
+        </nav>
+      </div>
+<div id="Overview" class="container-fluid">
+<br>
+<div class="jumbotron">
+        <h1>Form Statistics</h1>
+        <p class="lead">As of <span class="timestamp"></span> 
+		, we have received <span id="receivedFeedback"></span> Feedback(s) 
+		, we have received <span id="receivedFAQ"></span> FAQ(s)
+		and we have received <span id="receivedInterest"></span> Tech Interest(s).</p>
+      </div>
+</div>
+<div id="FeedbackData" class="container-fluid">
+<h1 class="page-header">Showing Feedback As of <span class="timestamp"></span> :</h1>
+		   <table id = "FeedbackTable" class="table table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>Respondent Name</th>
+        <th>Respondent Email</th>
+		<th>Feedback By Respondent</th>
+		<th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+	</table>
+</div>
+<div id="FAQData" class="container-fluid">
+<h1 class="page-header">Showing FAQ As of <span class="timestamp"></span> :</h1>
+		   <table id = "FAQTable" class="table table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>Question Index</th>
+		<th>Receivied Questions</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+	</table>
+</div>
+<div id="BetaTestingData" class="container-fluid">
+<h1 class="page-header">Showing Interests As of <span class="timestamp"></span> :</h1>
+		   <table id = "BetaTestingTable" class="table table-hover table-responsive">
+    <thead>
+      <tr>
+		<th>Respondent Name</th>
+		<th>Respondent Gender</th>
+        <th>Respondent Email</th>
+		<th>Respondent Phone</th>
+		<th>Comments By Respondent</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+	</table>
+</div>
+<div id="UpdateProfile" class="container-fluid">
+<h1 class="page-header">Portal - Update Profile</h1>
+		  <h3 class="sub-header">Update the information on your Portal Account using this form.</h3> 
+		  <p><i class="material-icons" style="font-size: 35px;">access_time</i> This form should take about 3 minutes to complete...</p>
+		  <p style="color: red; font-weight: bold;">The form is already pre-populated with your current information, please change the fields neccessary and enter your password to confirm the change.</p>
+		  <div id="UpdateSuccess" class="alert alert-info">
+          Updated your information sucessfully! Changes will take effect upon next login.
+        </div>
+		<div id="PasswordMismatch" class="alert alert-warning">
+          One or more passwords entered are incorrect/mismatched. Please re-enter the relevant passwords correctly.
+        </div>
+	<div class="row">
+        <form class="form-horizontal" onsubmit="UpdateProfile();return false;" action="#">
+		 <fieldset>
+		  <legend>Account Information</legend>
+		 <fieldset disabled>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">User Identifier:</label>
+            <div class="col-lg-8">
+              <input id="AccountID" class="form-control" type="text" value="Example" required>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Name:</label>
+            <div class="col-lg-8">
+              <input id="UserName" class="form-control" type="text" value="Example" required>
+            </div>
+          </div>
+		  </fieldset>
+		  </fieldset>
+		  <fieldset>
+		  <legend>Change Password</legend>
+		  <p>If you are not changing your password, please enter your current password for all fields below:</p>
+		  <div class="form-group">
+            <label class="col-md-3 control-label">Old Password:</label>
+            <div class="col-md-8">
+              <input id="UserOldPassword" class="form-control" type="password" value="V^7xHf" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">New Password:</label>
+            <div class="col-md-8">
+              <input id="UserNewPassword" class="form-control" type="password" value="4X$X#6q&2ryj4A4Q" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm new password:</label>
+            <div class="col-md-8">
+              <input id="UserCfmPassword" class="form-control" type="password" value="2@pdM-4_$Mv=%eCp" required>
+            </div>
+          </div>
+		  </fieldset>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <button type="submit" class="btn btn-primary" value="submit">Update Information</button>
+			  <button id="resetform" class="btn btn-default" onclick="GetProfile();return false;">Discard Changes</button>
+            </div>
+          </div>
+        </form>
+		<br>
+</div>
+<div id="404" class="container-fluid">
+
+</div>
+</div>
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+	<script src="../Server/server_Portal.js"></script>
+	<script src="../JavaScript/dataTables.min.js"></script>
+	<script>
+	Database();
+	checklogin();
+	</script>
+  </body>
+</html>

@@ -1,0 +1,501 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="../CSS/dataTables.bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="../CSS/Dashboard+CSS.css"/>
+<style>
+/* CSS CODE FOR THIS PAGE IS INSIDE DASHBOARD+CSS.css*/
+</style>
+<title>Tutor Dashboard-Useful Links</title>
+<!--
+<script type="text/javascript" src="*.js">
+</script>
+-->
+<script type="text/javascript">
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Useful Links Tutor Dashboard Page.html"><img id="logo" class="img-fluid" src="../Media/SNS_Logo.png" width="177" height="44" alt="Smart Nation Logo"></a>
+    </div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul id="DashboardBar" class="nav navbar-nav">
+        <li id="list1"><a href="#" onclick="SwitchPage(this.innerText)"><i class="material-icons" style="font-size:24px;">dashboard</i>Overview</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">assignment_ind</i>Tutor-Requests<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li id="list2"><a href="#" onclick="SwitchPage(this.innerText)">View Requests</a></li>
+			<li id="list3"><a href="#" onclick="SwitchPage(this.innerText)">Respond to Requests</a></li>
+            <li id="list4"><a href="#" onclick="SwitchPage(this.innerText)">Export Requests</a></li>
+          </ul>
+        </li>
+		 <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons" style="font-size:24px;">settings</i>Tutor - Tools<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+		    <li id="list5"><a href="#" onclick="SwitchPage(this.innerText)">Calendar</a></li>
+            <li id="list6"><a href="#" onclick="SwitchPage(this.innerText)">Update Profile</a></li>
+          </ul>
+        </li>
+      </ul>
+	  <p id="userFlag" class="navbar-text navbar-right">Signed in as <span class="UserName"></span></p>
+	  <ul class="nav navbar-nav navbar-right">
+	    <li id="help"><a href="#" onclick="dashboardhelp()"><i class="material-icons" style="font-size:24px;">help</i>Help</a></li>
+	    <li id="logout"><a href="#" onclick="Logout()"><i class="material-icons" style="font-size:24px;">vpn_key</i>Log Out</a></li>
+        <li id="backtomain"><a href="Home Page.html"><i class="material-icons" style="font-size:24px;">exit_to_app</i>Return back to Website</a></li>
+      </ul>
+	  </div>
+  </div>
+</nav>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY BELOW-->
+<div id="Login" class="container">
+<div class="row">
+<div class="col-md-12">
+<img id="dashboardPic" class="img-responsive" src="../Media/DashboardLogin.jpg"></img>
+<h1>Dashboard - Tutor</h1>
+<h3>Reminder:</h3>
+<p>Dashboard requires JavaScript to function correctly. Please check JavaScript compatibility <a href="https://www.whatismybrowser.com/detect/is-javascript-enabled">here</a>. Also, Dashboard is best viewed in Landscape mode on mobile devices.</p>
+<h2 id="dashboardAuthMsg">Authorised Access Only</h2>
+</div>
+</div>
+      <form class="form-signin" onsubmit="encryption(); return false;" action="#">
+        <h2 class="form-signin-heading">Sign in</h2>
+		<div id="authfailedMsg" class="alert alert-warning alert-dismissible fade in" role="alert">
+		 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		Wrong Email or Password! Please try again.
+		</div>
+		<div id="sessionerrorMsg" class="alert alert-danger" role="alert">A session error occurred! For your security, you have been logged out.</div>
+		<div id="logoutMsg" class="alert alert-success" role="alert">You have been logged out sucessfully!</div>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus>
+		<br>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+		<br>
+		<p>If you need help logging into Dashboard, please click <a onclick="accounthelp()">here</a>.</p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="submit"><i class="material-icons" style="font-size:24px;">vpn_lock</i>Sign in</button>
+      </form>
+    </div>
+<div id="dashboardinterface" class="container">
+    <div id="AccountHelp" class="container">
+<div class="row">
+        <div class="col-md-12">
+          <h1>Dashboard Help</h1>
+		  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Situation</th>
+        <th>Solution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>You don't have an account to access the dashboard.</td>
+        <td>Accounts for the dashboard are provisoned for tutors that assist the elderly in a face-to-face session. Tutors must be registered Social workers with <a href="https://www.ncss.gov.sg/">National Council of Social Service</a>. To be a tutor, please contact us at <a href="mailto:smartnationnyp@gmail.com">smartnationnyp@gmail.com</a> with the subject "Application to be a tutor".</td>
+      </tr>
+      <tr>
+        <td>You can't login to the dashboard.</td>
+        <td>Verify if you are using the correct email and password for your account, to login and try again. If unsucessful, please contact us at <a href="mailto:smartnationnyp@gmail.com">smartnationnyp@gmail.com</a> with the subject "Account Help (Social Worker)".</td>
+      </tr>
+      <tr>
+        <td>After signing in, nothing happens.</td>
+        <td rowspan="2">As Dashboard is a JavaScript based application, JavaScript is required to run Dashboard's many functions. Verify that JavaScript is allowed to run in your browser by performing this <a href="https://www.whatismybrowser.com/detect/is-javascript-enabled">Simple Check</a>. In the unlikely event that you are unable to activate JavaScript in your browser, please use another device to access dashboard. If JavaScript is activated in your browser, try closing and re-opening the browser. If the problem still presist, please contact us at <a href="mailto:smartnationnyp@gmail.com">smartnationnyp@gmail.com</a> with the subject "Dashboard Bugs". </td>
+      </tr>
+	  <tr>
+        <td>Dashboard is not working properly as it should be.</td>
+      </tr>
+	  <tr>
+        <td>I wish to discontinue my tutoring services and would like close my dashboard account.</td>
+        <td>We're sorry to see you go! Please contact us at <a href="mailto:smartnationnyp@gmail.com">smartnationnyp@gmail.com</a> with the subject "Withdrawal application for Tutors".</td>
+      </tr>
+	  <tr>
+	  <td>I wish to change information displayed on the Tutor's Informational Page. (E.g. Adding new skills that I have recently picked up onto my Skillset)</td>
+	  <td>Please contact us at <a href="mailto:smartnationnyp@gmail.com">smartnationnyp@gmail.com</a> with the subject "Tutor Page (Profile Display Update)". You may be asked to provide academic verification documents (e.g. Certificate,Diploma, etc) for new skills that you wish to add onto your Skillset. Academic Verification allows us to ensure that your skills are verified by an educational insitution, and that you are able to effect train the elderly using your new skills.</td>
+	  </tr>
+	  <tr>
+	  <td>I wish to change my name on my Dashboard Profile.</td>
+	  <td>Please contact us at <a href="mailto:smartnationnyp@gmail.com">smartnationnyp@gmail.com</a> with the subject "Dashboard Tutor Profile Update". Please provide verification documents (e.g. Identity Card, Deed Poll, etc) to support the change of your name.</td>
+	  </tr>
+	  <tr>
+        <td>My issue is not being reflected above.</td>
+        <td>Please contact us at <a href="mailto:smartnationnyp@gmail.com">smartnationnyp@gmail.com</a> with the subject "Dashboard Other Issues".</td>
+      </tr>
+    </tbody>
+  </table>
+        </div>
+      </div>
+	  <div class="row">
+	  <div class="col-md-12">
+          <h1>Important Notes</h1>
+		  <hr>
+		  <ul>
+		  <li>When applying to be a tutor or reseting your account on Dashboard, we need to verify your identity. Therefore, please provide a scan of an identification document (IC or Social Worker Pass) on both sides when sending your case. </li>
+		  <li>When resetting your account, please correspond with us through the email registered with your Dashboard Account.</li>
+		  <li>Please provide details of your issue to better assist you. A screenshot of the error will be much apperciated!</li>
+		  </ul>
+		  <button id="returnLogin" class="btn btn-primary" onclick="backtologin()">Return back to Login</button>
+		  <h3><i class="material-icons" style="font-size:48px;">error_outline</i>Incomplete emails will delay our processing of your case.</h3>
+        </div>
+	  </div>
+</div>
+        <div id="dashboardOverview" class="container-fluid">
+          <h1 class="page-header">Dashboard - Overview</h1>
+		  <p id="overview">As of <span class="timestamp"></span> , you have received <span class="receivedRequests"></span> requests and you have accepted <span class="acceptedRequests"></span> requests.</p>
+          <h3 class="sub-header">Notice to Tutors: Personal Data Protection Act</h3>
+		  <hr>
+		  <p>In line with the Personal Data Protection Act (PDPA), tutors are reminded to maintain confidentially of the tutees contact information. Also, when exporting requests, contact information will no longer be included.</p>
+		  <p>Please refer to the PDPA on the Singapore Statutes Online <a href="https://sso.agc.gov.sg/Act/PDPA2012">here</a> (You will redirected to Singapore Statutes Online, your session with Dashboard will not be affected).</p>
+		  <p>Under the PDPA, the following activites are prohibtied:</p>
+		  <ul>
+		  <li>Forward tutees contact information to telemarkerters/advertisting agencies</li>
+		  <li>Use tutees contact information for personal activites without explict permission</li>
+		  <li>Leave tutees contact information unsecured</li>
+		  </ul>
+		  <p style="font-weight : bold;">Note that list is non exhaustive and subject to change</p>
+		  <p>Failure to comply are grounds for the tutor to be dismissed and possibly charged under the PDPA</p>
+		  <br>
+		  <h3 class="sub-header">System Maintainence</h3>
+		  <hr>
+		  <p>Please note that Dashboard will offline during the following time periods:</p>
+		  <ul>
+		  <li>Every Sunday (12AM - 6AM)</li>
+		  <li>30th July 2017 (ALL DAY)</li>
+		  </ul>
+		  <p>You will face a session error when you attempt to access Dashboard during maintainence periods listed above.</p>
+		  <p>We apologise for any inconvience caused.</p>
+		  <br>
+          </div>
+		  <div id="dashboardViewRequests" class="container-fluid">
+          <h1 class="page-header">Dashboard - View Requests</h1>
+		  <p><span style="font-weight:bold;">NOTE:</span> Back-dated Requests are not displayed. To see Back-dated Requests, please go to "Export Request" Page</p>
+		  <p>Showing Requests As of <span class="timestamp"></span> :</p>
+		   <table id = "RequestsTable" class="table table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>Request Number</th>
+        <th>Tutee Name</th>
+        <th>Tutee Email</th>
+		<th>Tutee Phone</th>
+		<th>Chosen Date</th>
+		<th>Chosen Time</th>
+		<th>Chosen Duration</th>
+		<th>Request Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <br>
+  <form class="form-horizontal" onsubmit="return false;" action="#">
+		  <fieldset>
+		  <legend>Get Tutee's Concerns</legend>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Request Number:</label>
+            <div class="col-lg-8">
+                <input id="requestnumber" class="form-control" type="number" name="requestnumber" min="1" onchange="GetRequestConcern();" required>
+            </div>
+          </div>
+		  <p style="color: red; font-weight: bold;">If the form field below is not auto-filled, please check your request number!</p>
+		  <fieldset disabled>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Tutee Concerns:</label>
+            <div class="col-lg-8">
+              <textarea class="form-control" rows="7" id="DisplayConcerns" autocomplete="false" readonly></textarea>
+            </div>
+          </div>
+		  </fieldset>
+		  </fieldset>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+			  <button type="reset" class="btn btn-default" value="reset">Clear Fields</button>
+            </div>
+          </div>
+        </form>
+		<br>
+          </div>
+		  <div id="dashboardRespondRequests" class="container-fluid">
+          <h1 class="page-header">Dashboard - Respond To Requests</h1>
+		  <h3 class="sub-header">Respond to Tutee's request using this form.</h3> 
+		  <p><i class="material-icons" style="font-size: 35px;">access_time</i> This form should take about 5 minutes to complete...</p>
+		  <div id="ResponseSuccess" class="alert alert-success">
+          Uploaded Response Successfully!
+        </div>
+		<div id="ResponseFailed" class="alert alert-danger">
+          Failed to upload Response! Please check all fields before re-trying!
+        </div>
+	<div class="row">
+        <form class="form-horizontal" onsubmit="UpdateResponse();return false;" action="#">
+		 <fieldset disabled>
+		 <legend>Tutor Details</legend>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Tutor Name:</label>
+            <div class="col-lg-8">
+              <input id="TutorName" class="form-control" type="text" autocomplete="false" required readonly>
+            </div>
+          </div>
+		  </fieldset>
+		  <fieldset>
+		  <legend>Consultation Details</legend>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Request Number:</label>
+            <div class="col-lg-8">
+                <input id="RequestNumber" class="form-control" type="number" name="requestnumber" min="1" onchange="GetRequestDetails();" required>
+            </div>
+          </div>
+		  <p style="color: red; font-weight: bold;">If the form fields below are not auto-filled, please check your request number!</p>
+		  <fieldset disabled>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Tutee Name:</label>
+            <div class="col-lg-8">
+              <input id="TuteeName" class="form-control" type="text" autocomplete="false" required>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Tutee Phone:</label>
+            <div class="col-lg-8">
+              <input id="TuteePhone" class="form-control" type="text" pattern="^\d{8}$" autocomplete="false" required>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Tutee Email:</label>
+            <div class="col-lg-8">
+              <input id="TuteeEmail" class="form-control" type="email" autocomplete="false" required>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Tutor Choice:</label>
+            <div class="col-lg-8">
+	  <select name="TutorChoice" id="TutorChoice" class="form-control" autocomplete="false" required>
+    <option value="Jonathan Tan">Jonathan Tan</option>
+    <option value="Marrianne Clarke">Marrianne Clarke</option>
+    <option value="Sarah Sidle">Sarah Sidle</option>
+	<option value="Keith Cheng">Keith Cheng</option>
+	<option value="" selected></option>
+  </select>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Consultation Date:</label>
+            <div class="col-lg-8">
+              <input type="date" class="form-control" id="ConsultationDate" autocomplete="false" required></input>
+            </div>
+          </div>
+		   <div class="form-group">
+            <label class="col-lg-3 control-label">Consultation Time:</label>
+            <div class="col-lg-8">
+              <input type="time" class="form-control" id="ConsultationTime" autocomplete="false" required></input>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Consultation Duration:</label>
+            <div class="col-lg-8">
+              <select name="ConsultationDuration" id="ConsultationDuration" class="form-control" autocomplete="false" required>
+    <option value="30 Minutes">30 Minutes</option>
+    <option value="1 hour" selected>1 hour</option>
+    <option value="1 hour and 30 minutes">1 hour and 30 minutes</option>
+	<option value="2 hours">2 hours</option>
+  </select>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Tutee Concerns:</label>
+            <div class="col-lg-8">
+              <textarea class="form-control" rows="7" id="TuteeConcerns" autocomplete="false"></textarea>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Current Request Status:</label>
+            <div class="col-lg-8">
+	         <select name="CurrentRequestStatus" id="CurrentRequestStatus" class="form-control" autocomplete="false" required>
+    <option value="Pending">Pending</option>
+    <option value="Accepted">Accepted</option>
+    <option value="Rejected">Rejected</option>
+  </select>
+            </div>
+          </div>
+		  </fieldset>
+		  </fieldset>
+		  <fieldset>
+		  <legend>Update Consultation Status</legend>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">New Request Status:</label>
+            <div class="col-lg-8">
+	  <select name="NewRequestStatus" id="NewRequestStatus" class="form-control" autocomplete="false" required>
+    <option value="Accepted">Accepted</option>
+    <option value="Rejected" selected>Rejected</option>
+  </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Password:</label>
+            <div class="col-lg-8">
+              <input id="UserPassword" class="form-control" type="password" required>
+            </div>
+          </div>
+		  </fieldset>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <button type="submit" class="btn btn-primary" value="submit">Submit Response</button>
+			  <button id="ResponseResetBtn" class="btn btn-default" onclick="RePopulateForm();return false;">Clear Response</button>
+            </div>
+          </div>
+        </form>
+		<br>
+  </div>
+          </div>
+		  <div id="dashboardExportRequests" class="container-fluid">
+          <h1 class="page-header">Dashboard - Export Requests</h1>
+		  <p><span style="font-weight:bold;">NOTE:</span> All Requests including Back-dated Requests, are displayed. To see Current Requests only, please go to "View Requests" Page</p>
+		  <p>Showing Requests As of <span class="timestamp"></span> :</p>
+		   <table id = "ERequestsTable" class="table table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>Request Number</th>
+        <th>Tutee Name</th>
+		<th>Chosen Date</th>
+		<th>Chosen Time</th>
+		<th>Chosen Duration</th>
+		<th>Tutee Concerns</th>
+		<th>Request Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <br>
+          </div>
+		  <div id="dashboardViewCalendar" class="container-fluid">
+          <h1 class="page-header">Dashboard - Tutor Calendar</h1>
+		  <p id="CalNewWindow">Click <a onclick="CalNewWindow()">here </a> to open Tutor Calendar (Hosted on Google Calendar).</p>
+		  <h3>Calendar Colour Codes</h3>
+		  <hr>
+		  <ul>
+		  <li>Jonathan Tan - Blue Colour</li>
+		  <li>Marrianne Clarke - Yellow Colour</li>
+		  <li>Sarah Sidle - Orange Colour</li>
+		  <li>Keith Cheng - Red Colour</li>
+		  <li>Public Hoildays - Green Colour</li>
+		  </ul>
+		  <div class="googleCalendar">
+	  <iframe 
+	  src="https://calendar.google.com/calendar/embed?showPrint=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=smartnationnyp%40gmail.com&amp;color=%231B887A&amp;src=en.singapore%23holiday%40group.v.calendar.google.com&amp;color=%23B1365F&amp;src=g2aemk6ibb8i5v1tcgqnuarih4%40group.calendar.google.com&amp;color=%23182C57&amp;src=me052k5a9rr60rqqf9sr5pbs2c%40group.calendar.google.com&amp;color=%23711616&amp;src=fvomeuh4gvh1bbr1k68anhke44%40group.calendar.google.com&amp;color=%23AB8B00&amp;src=fpkga5i3a88h9vmmn0g58c72bc%40group.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FSingapore" 
+	  style="border-width:0" width="750" height="500" frameborder="0" scrolling="no">
+	  </iframe>
+	  <br>
+	  </div>
+          </div>
+		  <div id="dashboardUpdateProfile" class="container-fluid">
+          <h1 class="page-header">Dashboard - Update Profile</h1>
+		  <h3 class="sub-header">Update the information on your Dashboard Account using this form.</h3> 
+		  <p><i class="material-icons" style="font-size: 35px;">access_time</i> This form should take about 3 minutes to complete...</p>
+		  <p style="color: red; font-weight: bold;">The form is already pre-populated with your current information, please change the fields neccessary and enter your password to confirm the change.</p>
+		  <div id="UpdateSuccess" class="alert alert-info">
+          Updated your information sucessfully! Changes will take effect upon next login.
+        </div>
+		<div id="PasswordMismatch" class="alert alert-warning">
+          One or more passwords entered are incorrect/mismatched. Please re-enter the relevant passwords correctly.
+        </div>
+	<div class="row">
+        <form class="form-horizontal" onsubmit="UpdateProfile();return false;" action="#">
+		 <fieldset>
+		  <legend>Account Information</legend>
+		 <fieldset disabled>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Account Identifier:</label>
+            <div class="col-lg-8">
+              <input id="AccountID" class="form-control" type="text" value="Example" required>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Name:</label>
+            <div class="col-lg-8">
+              <input id="UserName" class="form-control" type="text" value="Example" required>
+            </div>
+          </div>
+		  </fieldset>
+		  <div class="form-group">
+            <label class="col-lg-3 control-label">Phone Number:</label>
+            <div class="col-lg-8">
+              <input id="UserPhone" type="text" class="form-control" id="userPhone" placeholder="12345678" pattern="^\d{8}$" required></input>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input id="UserEmail" class="form-control" type="email" value="someone@example.com" required>
+            </div>
+          </div>
+		  </fieldset>
+		  <fieldset>
+		  <legend>Change Password</legend>
+		  <p>If you are not changing your password, please enter your current password for all fields below:</p>
+		  <div class="form-group">
+            <label class="col-md-3 control-label">Old Password:</label>
+            <div class="col-md-8">
+              <input id="UserOldPassword" class="form-control" type="password" value="V^7xHf" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">New Password:</label>
+            <div class="col-md-8">
+              <input id="UserNewPassword" class="form-control" type="password" value="4X$X#6q&2ryj4A4Q" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm new password:</label>
+            <div class="col-md-8">
+              <input id="UserCfmPassword" class="form-control" type="password" value="2@pdM-4_$Mv=%eCp" required>
+            </div>
+          </div>
+		  </fieldset>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <button type="submit" class="btn btn-primary" value="submit">Update Information</button>
+			  <button id="resetform" class="btn btn-default" onclick="GetProfile();return false;">Discard Changes</button>
+            </div>
+          </div>
+        </form>
+		<br>
+  </div>
+          </div>
+		  <div id="dashboard404" class="container-fluid">
+          </div>
+      </div>
+</div>
+<!-- ENTER HTML CODE APPLICABLE FOR THIS PAGE ONLY ABOVE-->
+    <a href="javascript:" id="return-to-top"><i class="material-icons">keyboard_arrow_up</i></a>
+	<br>
+	<br>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2017, ITP-191 Project Group SF1701-2</p>
+		<p class="text-muted">Facing Problems? Feedback to us through <a href="mailto:smartnationnyp@gmail.com">email</a> or the feedback form <a href="About Us Page.html">here</a>!</p>
+      </div>
+    </footer>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../JavaScript/bootstrap.min.js"></script>
+	<script src="../JavaScript/ScrollTop.js"></script>
+	<script src="../Server/server_DashboardTutor.js"></script>
+	<script src="../JavaScript/dataTables.min.js"></script>
+	<script>
+Database();
+checklogin();
+	</script>
+</body>
+</html>
